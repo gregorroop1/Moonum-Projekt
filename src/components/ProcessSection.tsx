@@ -1,8 +1,14 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useScroll } from 'motion/react';
 import { Warp } from "@paper-design/shaders-react";
 
 const ProcessSection: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+
   const steps = [
     {
       title: "01. Esmane kontakt",
@@ -56,7 +62,7 @@ const ProcessSection: React.FC = () => {
         />
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10" ref={containerRef}>
         {/* Header Row */}
         <div className="flex flex-col items-center text-center gap-12 mb-32">
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter max-w-5xl uppercase">
@@ -68,36 +74,61 @@ const ProcessSection: React.FC = () => {
         {/* Process Steps */}
         <div className="relative">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[1px] h-full bg-zinc-800 hidden lg:block"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[1px] h-full bg-zinc-800 hidden lg:block overflow-hidden">
+             <motion.div 
+               className="w-full bg-purple-500 origin-top"
+               style={{ scaleY: scrollYProgress, height: "100%" }}
+             />
+          </div>
 
           <div className="space-y-32">
             {steps.map((step, index) => (
               <motion.div 
                 key={index} 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-40 relative items-start group"
+                initial="inactive"
+                whileInView="active"
+                viewport={{ margin: "-30% 0px -30% 0px" }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-40 relative items-start"
               >
                 
                 {/* Left Side: Title */}
                 <div className="lg:text-right lg:pr-20">
-                  <h3 className="text-2xl md:text-4xl font-display font-bold text-zinc-700 group-hover:text-white transition-all duration-700 leading-[1.1] uppercase">
+                  <motion.h3 
+                    variants={{
+                      inactive: { color: "#3f3f46" },
+                      active: { color: "#ffffff" }
+                    }}
+                    transition={{ duration: 0.5 }}
+                    className="text-2xl md:text-4xl font-display font-bold leading-[1.1] uppercase"
+                  >
                     {step.title}
-                  </h3>
+                  </motion.h3>
                 </div>
 
                 {/* Timeline Dot (Desktop only) */}
                 <div className="absolute left-1/2 -translate-x-1/2 top-4 hidden lg:flex items-center justify-center z-10">
-                   <div className="w-5 h-5 rounded-full bg-zinc-800 group-hover:bg-purple-500 group-hover:scale-150 transition-all duration-700 border-4 border-zinc-900 shadow-[0_0_20px_rgba(0,0,0,0.5)]"></div>
+                   <motion.div 
+                     variants={{
+                       inactive: { backgroundColor: "#27272a", scale: 1, boxShadow: "0 0 0px rgba(168, 85, 247, 0)" },
+                       active: { backgroundColor: "#a855f7", scale: 1.5, boxShadow: "0 0 20px rgba(168, 85, 247, 0.8)" }
+                     }}
+                     transition={{ duration: 0.5 }}
+                     className="w-5 h-5 rounded-full border-4 border-zinc-900"
+                   ></motion.div>
                 </div>
 
                 {/* Right Side: Description */}
                 <div className="lg:pl-20 pt-2">
-                   <p className="text-zinc-500 group-hover:text-zinc-300 text-base md:text-xl leading-relaxed transition-all duration-700 max-w-xl">
+                   <motion.p 
+                     variants={{
+                       inactive: { color: "#71717a" },
+                       active: { color: "#d4d4d8" }
+                     }}
+                     transition={{ duration: 0.5 }}
+                     className="text-base md:text-xl leading-relaxed max-w-xl"
+                   >
                      {step.description}
-                   </p>
+                   </motion.p>
                 </div>
               </motion.div>
             ))}

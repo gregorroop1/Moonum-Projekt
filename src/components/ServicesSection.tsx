@@ -38,27 +38,21 @@ const ServicesSection: React.FC = () => {
       </div>
 
       {/* Main Content Area */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
-        <div className="lg:col-span-5">
+      <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">
+        <div className="flex flex-col items-start">
            <div className="flex items-center gap-4 mb-2" id="services">
              <div className="w-8 h-[2px] bg-black"></div>
              <span className="text-[10px] uppercase tracking-[0.2em] font-black">teenused</span>
            </div>
            <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter uppercase font-sans">
-             Mida me<br />Pakume
+             Mida me teile<br />Pakume?
            </h2>
         </div>
 
-        <div className="lg:col-span-4 flex flex-col justify-end pb-1">
-          <p className="text-zinc-500 text-sm leading-relaxed max-w-sm">
+        <div className="max-w-sm lg:pt-8">
+          <p className="text-zinc-500 text-sm leading-relaxed text-left lg:text-left">
             Loome visuaalselt silmapaistvaid ja loogilise ülesehitusega veebilahendusi, mis räägivad teie brändi unikaalset lugu. Meie veebiarendus põhineb sügaval arusaamal UI/UX disainist ja kasutajakogemusest.
           </p>
-        </div>
-
-        <div className="lg:col-span-3 flex items-end justify-start lg:justify-end pb-1">
-          <button className="bg-black text-white px-8 py-3.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-zinc-800 transition-colors">
-            vaata kõiki teenuseid
-          </button>
         </div>
       </div>
 
@@ -81,7 +75,7 @@ const ServicesSection: React.FC = () => {
           <PenTool size={40} strokeWidth={1} className="text-zinc-400 group-hover:text-white transition-colors" />
           <div className="space-y-4">
             <h3 className="text-xl font-display font-bold uppercase tracking-tight leading-tight">
-              UI-UX<br />LOOV<br />DISAIN
+              TARKVARA
             </h3>
             <a href="#" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all">
               LOE EDASI <MoveRight size={12} />
@@ -94,7 +88,7 @@ const ServicesSection: React.FC = () => {
           <Monitor size={40} strokeWidth={1} className="text-zinc-600 group-hover:text-black transition-colors" />
           <div className="space-y-4">
             <h3 className="text-xl font-display font-bold uppercase tracking-tight leading-tight">
-              VISUAALNE<br />GRAAFILINE DISAIN
+              VEEBILEHED
             </h3>
             <a href="#" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all">
               LOE EDASI <MoveRight size={12} />
@@ -107,7 +101,7 @@ const ServicesSection: React.FC = () => {
           <Target size={40} strokeWidth={1} className="text-zinc-600 group-hover:text-black transition-colors" />
           <div className="space-y-4">
             <h3 className="text-xl font-display font-bold uppercase tracking-tight leading-tight text-zinc-900">
-              STRATEEGIA JA<br />DIGITURUNDUS
+              TURUNDUS
             </h3>
             <a href="#" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all text-zinc-900">
               LOE EDASI <MoveRight size={12} />

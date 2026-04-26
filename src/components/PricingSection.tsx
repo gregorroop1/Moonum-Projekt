@@ -35,11 +35,43 @@ const PricingSection: React.FC = () => {
       price: ""
     },
     {
+      id: "04-1",
+      title: "SEO",
+      subtitle: "VEEBILEHED",
+      meta: "KÜSI HINDA",
+      isDark: false,
+      price: ""
+    },
+    {
+      id: "04-2",
+      title: "Hooldused",
+      subtitle: "VEEBILEHED",
+      meta: "KÜSI HINDA",
+      isDark: false,
+      price: ""
+    },
+    {
       id: "05",
-      title: "CRM",
+      title: "Klientide haldamise tarkvara",
       subtitle: "TARKVARA",
       meta: "KÜSI HINDA",
       isDark: true,
+      price: ""
+    },
+    {
+      id: "05-1",
+      title: "Protsesside automatiseerimine",
+      subtitle: "TARKVARA",
+      meta: "KÜSI HINDA",
+      isDark: false,
+      price: ""
+    },
+    {
+      id: "05-2",
+      title: "Integratsioonid",
+      subtitle: "TARKVARA",
+      meta: "KÜSI HINDA",
+      isDark: false,
       price: ""
     },
     {

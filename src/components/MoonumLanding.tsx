@@ -107,7 +107,6 @@ const MoonumLanding: React.FC = () => {
           overflow: hidden;
         }
         .layer-2 { background: transparent; border: none; pointer-events: none; }
-        .layer-3 { background: transparent; border: none; pointer-events: none; }
 
         .contours {
           position: absolute;
@@ -180,18 +179,7 @@ const MoonumLanding: React.FC = () => {
         <div className="halide-grain" style={{ filter: 'url(#grain)' }}></div>
 
         <div className="interface-grid">
-          <div className="flex items-center gap-2 opacity-0">
-            {/* Logo eemaldatud, asendatud Navbariga */}
-          </div>
-          <div className="flex flex-col items-end">
-             {/* Eemaldatud BRÄNDI IDENTITEET tekst */}
-          </div>
-
-          <div>
-             {/* Eemaldatud Kliendi põhine teenindus tekst */}
-          </div>
-
-          <div className="flex flex-col justify-center items-end text-right translate-y-16">
+          <div className="flex flex-col justify-center items-end text-right translate-y-16" style={{ gridRow: 2, gridColumn: 2 }}>
             <h1 className="font-['Michroma'] uppercase" style={{ fontSize: 'clamp(1.5rem, 4vw, 3.5rem)', lineHeight: '1.2', filter: 'drop-shadow(0px 12px 24px rgba(0,0,0,1)) drop-shadow(0px 0px 12px rgba(0,0,0,0.8)) drop-shadow(0px 0px 4px rgba(0,0,0,1))' }}>
                <div className="flex items-center gap-4 justify-end">
                   <span className="text-white">LUUES</span>
@@ -201,7 +189,7 @@ const MoonumLanding: React.FC = () => {
             </h1>
           </div>
 
-          <div style={{ gridColumn: '1 / -1', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+          <div style={{ gridColumn: '1 / -1', gridRow: 3, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
             <div style={{ fontFamily: 'monospace', fontSize: '0.75rem' }}>
               <p>[ MOONUM 2025 ]</p>
               <p>KAASAHAARAVATE JA TULEMUSELE ORIENTEERITUD<br />VEEBILEHTEDE TEGEMINE NING TARKVARA ARENDUS EESTIS</p>
@@ -236,7 +224,6 @@ const MoonumLanding: React.FC = () => {
                   </div>
                </div>
             </div>
-            <div className="layer layer-3" ref={(el) => (layersRef.current[2] = el!)}></div>
             <div className="contours"></div>
           </div>
         </div>
