@@ -1,0 +1,12 @@
+{
+  "logo": "MOONUM",
+  "nav": {
+    "cta": "Explore the depth",
+    "openMenu": "Open sidebar",
+    "closeMenu": "Close sidebar"
+  },
+  "langSwitch": {
+    "et": "ET",
+    "en": "EN"
+  }
+}

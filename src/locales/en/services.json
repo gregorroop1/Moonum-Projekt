@@ -1,0 +1,27 @@
+{
+  "social": {
+    "facebook": "FACEBOOK",
+    "tiktok": "TIKTOK",
+    "instagram": "INSTAGRAM",
+    "email": "Info@moonum.ee"
+  },
+  "header": {
+    "tag": "services",
+    "title": "What do we<br />Offer?",
+    "description": "We create visually striking and logically structured web solutions that tell the unique story of your brand. Our web development is based on a deep understanding of UI/UX design and user experience."
+  },
+  "sidebar": "SCROLL DOWN",
+  "cards": {
+    "software": "SOFTWARE",
+    "websites": "WEBSITES",
+    "marketing": "MARKETING",
+    "readMore": "READ MORE"
+  },
+  "marquee": [
+    "WEB DESIGN",
+    "APP DESIGN",
+    "DEVELOPMENT",
+    "WEB FLOW",
+    "BRANDING"
+  ]
+}

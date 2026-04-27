@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "title1": "CREATING",
+    "title2": "DIGITAL",
+    "title3": "EXPERIENCES",
+    "tag": "[ MOONUM 2025 ]",
+    "description": "ENGAGING AND RESULTS-ORIENTED<br />WEB DEVELOPMENT AND SOFTWARE ENGINEERING IN ESTONIA",
+    "logo": "MOONUM",
+    "nav": {
+      "home": "Home",
+      "services": "Services",
+      "pricing": "Pricing"
+    },
+    "cta": "Get in touch"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "menu": {
+    "home": "Avaleht",
+    "services": "Teenused",
+    "pricing": "Hinnakiri",
+    "works": "Tehtud tööd",
+    "contact": "Kontakt"
+  },
+  "categories": {
+    "websites": "VEEBILEHED",
+    "software": "TARKVARA",
+    "marketing": "TURUNDUS"
+  },
+  "pricing": {
+    "meta": "KÜSI HINDA",
+    "plans": {
+      "01": "Lihtne veebileht",
+      "02": "Keerulisem Veebileht",
+      "03": "Väljakutse",
+      "04": "E-pood",
+      "04-1": "SEO",
+      "04-2": "Hooldused",
+      "05": "Klientide haldamise tarkvara",
+      "05-1": "Protsesside automatiseerimine",
+      "05-2": "Integratsioonid",
+      "06": "Reklaamid",
+      "07": "Sotsiaalmeedia haldamine"
+    }
+  },
+  "process": {
+    "01": {
+      "title": "01. Esmane kontakt",
+      "description": "Võtke meiega julgelt ühendust ja räägime sinu ideest täpsemalt, ära karda meile läbirääkimistel EI öelda sest, meie jaoks on oluline, et leiaksite endale tegija kes vastaks täpselt teie vajadustele. Kaardistame sinu eesmärgid, sihtgrupi ja ootused. See on kõige olulisem samm, sest hästi toimiv veebileht algab selgest visioonist. Meie eesmärk on mõista, mida sa tegelikult vajad — mitte lihtsalt mida sa arvad, et vajad."
+    },
+    "02": {
+      "title": "02. Analüüs ja strateegia",
+      "description": "Sukeldume sinu projekti süvitsi. Analüüsime sinu ettevõtet, konkurente ja turgu. Loome selge strateegia, kuidas sinu veebileht saaks eristuda ja tuua reaalseid tulemusi. See sisaldab ka struktuuri, kasutajakogemuse (UX) ja positsioneerimise läbimõtlemist."
+    },
+    "03": {
+      "title": "03. Disain ja veebiarendus",
+      "description": "Disainime modernse ja visuaalselt eristuva veebilehe ning arendame selle tehniliselt kiireks, turvaliseks ja SEO-sõbralikuks. Iga detail on läbimõeldud — alates kasutajakogemusest kuni laadimiskiiruseni."
+    },
+    "04": {
+      "title": "04. Koos ülevaatus",
+      "description": "Vaatame koos tulemuse üle ja vajadusel teeme viimase lihvi. Esitleme sulle valminud lahendust ning kogume tagasisidet. Vajadusel teeme muudatused, et lõpptulemus vastaks täielikult sinu ootustele."
+    },
+    "05": {
+      "title": "05. Avaldamine",
+      "description": "Toome sinu idee ellu. Seadistame kõik vajaliku — domeen, hosting, tehnilised detailid ja põhjalik testimine. Tagame, et veebileht töötab laitmatult kõigis seadmetes ja on valmis külastajaid vastu võtma."
+    },
+    "06": {
+      "title": "06. Tugi ja järelhooldus",
+      "description": "Me ei kao pärast projekti lõppu. Pakume pidevat tuge, hooldust ja vajadusel edasiarendust. Sinu veebileht peab ajas arenema ja meie aitame sul sellel teekonnal kaasas olla."
+    }
+  },
+  "servicesList": {
+    "mobileApp": "Mobiilirakendus",
+    "webDesign": "Veebidisain",
+    "branding": "Bränding",
+    "webflow": "Webflow arendus",
+    "appDesign": "Äpi disain",
+    "graphicDesign": "Graafiline disain",
+    "wordpress": "Wordpress"
+  }
+}

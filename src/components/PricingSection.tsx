@@ -1,107 +1,17 @@
 import React from 'react';
-
-const CATEGORIES = ['VEEBILEHED', 'TARKVARA', 'TURUNDUS'] as const;
-
-const PRICING_PLANS = [
-  {
-    id: "01",
-    title: "Lihtne veebileht",
-    subtitle: "VEEBILEHED",
-    meta: "KÜSI HINDA",
-    isDark: true,
-    price: ""
-  },
-  {
-    id: "02",
-    title: "Keerulisem Veebileht",
-    subtitle: "VEEBILEHED",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "03",
-    title: "Väljakutse",
-    subtitle: "VEEBILEHED",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "04",
-    title: "E-pood",
-    subtitle: "VEEBILEHED",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "04-1",
-    title: "SEO",
-    subtitle: "VEEBILEHED",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "04-2",
-    title: "Hooldused",
-    subtitle: "VEEBILEHED",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "05",
-    title: "Klientide haldamise tarkvara",
-    subtitle: "TARKVARA",
-    meta: "KÜSI HINDA",
-    isDark: true,
-    price: ""
-  },
-  {
-    id: "05-1",
-    title: "Protsesside automatiseerimine",
-    subtitle: "TARKVARA",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "05-2",
-    title: "Integratsioonid",
-    subtitle: "TARKVARA",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "06",
-    title: "Reklaamid",
-    subtitle: "TURUNDUS",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  },
-  {
-    id: "07",
-    title: "Sotsiaalmeedia haldamine",
-    subtitle: "TURUNDUS",
-    meta: "KÜSI HINDA",
-    isDark: false,
-    price: ""
-  }
-] as const;
+import { useTranslation } from 'react-i18next';
+import { CATEGORIES, PRICING_PLANS } from '../constants/data';
 
 type Category = (typeof CATEGORIES)[number];
 type PricingPlan = (typeof PRICING_PLANS)[number];
 
 const PLANS_BY_CATEGORY = CATEGORIES.reduce((acc, category) => {
-  acc[category] = PRICING_PLANS.filter((plan) => plan.subtitle === category);
+  acc[category] = PRICING_PLANS.filter((plan) => plan.categoryId === category);
   return acc;
 }, {} as Record<Category, PricingPlan[]>);
 
 const PricingSection: React.FC = () => {
+  const { t } = useTranslation(['pricing', 'data']);
   return (
     <section className="bg-white text-black py-32 px-4 md:px-16 relative overflow-hidden" id="pricing">
       {/* Decorative center icon */}
@@ -121,10 +31,10 @@ const PricingSection: React.FC = () => {
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-20 relative">
         <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6 relative z-10">
-          HINNAKIRI
+          {t('header.title', { ns: 'pricing' })}
         </h2>
         <p className="text-zinc-500 text-sm leading-relaxed relative z-10 px-8">
-          Siin on saadaval mitmeid lahendusi, mis on kohandatud vastavalt teie vajadustele ja ootustele.
+          {t('header.description', { ns: 'pricing' })}
         </p>
 
         {/* Slanted lines decorative circle (Floating Right) */}
@@ -145,7 +55,7 @@ const PricingSection: React.FC = () => {
           <div key={category}>
             <div className="flex items-center gap-4 mb-6 px-2 md:px-0">
               <div className="w-12 h-[2px] bg-black"></div>
-              <h3 className="text-xl md:text-2xl font-display font-bold uppercase tracking-widest">{category}</h3>
+              <h3 className="text-xl md:text-2xl font-display font-bold uppercase tracking-widest">{t(`categories.${category}`, { ns: 'data' })}</h3>
             </div>
             <div className="space-y-4">
               {PLANS_BY_CATEGORY[category].map((plan, index) => (
@@ -168,10 +78,10 @@ const PricingSection: React.FC = () => {
                     {/* Content */}
                     <div>
                       <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight">
-                        {plan.title} <span className="text-zinc-500 ml-2">{plan.price}</span>
+                        {t(`pricing.plans.${plan.id}`, { ns: 'data' })} <span className="text-zinc-500 ml-2">{plan.price}</span>
                       </h3>
                       <p className={`text-xs uppercase tracking-widest mt-1 ${plan.isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
-                        {plan.subtitle}
+                        {t(`categories.${plan.categoryId}`, { ns: 'data' })}
                       </p>
                     </div>
                   </div>
@@ -180,7 +90,7 @@ const PricingSection: React.FC = () => {
                   <div className="flex items-center gap-6 w-full md:w-auto justify-end">
                     <div className={`h-8 w-[1px] hidden md:block ${plan.isDark ? 'bg-zinc-700' : 'bg-zinc-200'}`}></div>
                     <span className={`text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap`}>
-                      {plan.meta}
+                      {t('pricing.meta', { ns: 'data' })}
                     </span>
                   </div>
                 </div>

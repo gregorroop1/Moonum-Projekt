@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll } from 'motion/react';
+import { useTranslation } from 'react-i18next';
+import { PROCESS_STEPS } from '../constants/data';
 
 function WarpBackground() {
   const [Warp, setWarp] = useState<React.ComponentType<any> | null>(null);
@@ -41,44 +43,12 @@ function WarpBackground() {
 }
 
 const ProcessSection: React.FC = () => {
+  const { t } = useTranslation(['process', 'data']);
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
-
-  const steps = [
-    {
-      title: "01. Esmane kontakt",
-      description: "Võtke meiega julgelt ühendust ja räägime sinu ideest täpsemalt, ära karda meile läbirääkimistel EI öelda sest, meie jaoks on oluline, et leiaksite endale tegija kes vastaks täpselt teie vajadustele. Kaardistame sinu eesmärgid, sihtgrupi ja ootused. See on kõige olulisem samm, sest hästi toimiv veebileht algab selgest visioonist. Meie eesmärk on mõista, mida sa tegelikult vajad — mitte lihtsalt mida sa arvad, et vajad.",
-      isActive: true
-    },
-    {
-      title: "02. Analüüs ja strateegia",
-      description: "Sukeldume sinu projekti süvitsi. Analüüsime sinu ettevõtet, konkurente ja turgu. Loome selge strateegia, kuidas sinu veebileht saaks eristuda ja tuua reaalseid tulemusi. See sisaldab ka struktuuri, kasutajakogemuse (UX) ja positsioneerimise läbimõtlemist.",
-      isActive: false
-    },
-    {
-      title: "03. Disain ja veebiarendus",
-      description: "Disainime modernse ja visuaalselt eristuva veebilehe ning arendame selle tehniliselt kiireks, turvaliseks ja SEO-sõbralikuks. Iga detail on läbimõeldud — alates kasutajakogemusest kuni laadimiskiiruseni.",
-      isActive: false
-    },
-    {
-      title: "04. Koos ülevaatus",
-      description: "Vaatame koos tulemuse üle ja vajadusel teeme viimase lihvi. Esitleme sulle valminud lahendust ning kogume tagasisidet. Vajadusel teeme muudatused, et lõpptulemus vastaks täielikult sinu ootustele.",
-      isActive: false
-    },
-    {
-      title: "05. Avaldamine",
-      description: "Toome sinu idee ellu. Seadistame kõik vajaliku — domeen, hosting, tehnilised detailid ja põhjalik testimine. Tagame, et veebileht töötab laitmatult kõigis seadmetes ja on valmis külastajaid vastu võtma.",
-      isActive: false
-    },
-    {
-      title: "06. Tugi ja järelhooldus",
-      description: "Me ei kao pärast projekti lõppu. Pakume pidevat tuge, hooldust ja vajadusel edasiarendust. Sinu veebileht peab ajas arenema ja meie aitame sul sellel teekonnal kaasas olla.",
-      isActive: false
-    }
-  ];
 
   return (
     <section className="bg-zinc-800 text-white py-32 px-4 md:px-16 relative overflow-hidden" id="process">
@@ -91,7 +61,7 @@ const ProcessSection: React.FC = () => {
         {/* Header Row */}
         <div className="flex flex-col items-center text-center gap-12 mb-32">
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter max-w-5xl uppercase">
-            Meie protsess
+            {t('header', { ns: 'process' })}
           </h2>
           <div className="w-24 h-[1px] bg-purple-500/50"></div>
         </div>
@@ -107,7 +77,7 @@ const ProcessSection: React.FC = () => {
           </div>
 
           <div className="space-y-32">
-            {steps.map((step, index) => (
+            {PROCESS_STEPS.map((step, index) => (
               <motion.div 
                 key={index} 
                 initial="inactive"
@@ -126,7 +96,7 @@ const ProcessSection: React.FC = () => {
                     transition={{ duration: 0.5 }}
                     className="text-2xl md:text-4xl font-display font-bold leading-[1.1] uppercase"
                   >
-                    {step.title}
+                    {t(`process.${step.id}.title`, { ns: 'data' })}
                   </motion.h3>
                 </div>
 
@@ -152,7 +122,7 @@ const ProcessSection: React.FC = () => {
                      transition={{ duration: 0.5 }}
                      className="text-base md:text-xl leading-relaxed max-w-xl"
                    >
-                     {step.description}
+                     {t(`process.${step.id}.description`, { ns: 'data' })}
                    </motion.p>
                 </div>
               </motion.div>

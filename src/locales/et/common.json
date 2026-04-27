@@ -1,0 +1,12 @@
+{
+  "logo": "MOONUM",
+  "nav": {
+    "cta": "Uuri sügavust",
+    "openMenu": "Ava külgmenüü",
+    "closeMenu": "Sulge külgmenüü"
+  },
+  "langSwitch": {
+    "et": "ET",
+    "en": "EN"
+  }
+}

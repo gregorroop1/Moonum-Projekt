@@ -1,0 +1,27 @@
+{
+  "social": {
+    "facebook": "FACEBOOK",
+    "tiktok": "TIKTOK",
+    "instagram": "INSTAGRAM",
+    "email": "Info@moonum.ee"
+  },
+  "header": {
+    "tag": "teenused",
+    "title": "Mida me teile<br />Pakume?",
+    "description": "Loome visuaalselt silmapaistvaid ja loogilise ülesehitusega veebilahendusi, mis räägivad teie brändi unikaalset lugu. Meie veebiarendus põhineb sügaval arusaamal UI/UX disainist ja kasutajakogemusest."
+  },
+  "sidebar": "KERI ALLA",
+  "cards": {
+    "software": "TARKVARA",
+    "websites": "VEEBILEHED",
+    "marketing": "TURUNDUS",
+    "readMore": "LOE EDASI"
+  },
+  "marquee": [
+    "VEEBIDISAIN",
+    "ÄPI DISAIN",
+    "ARENDUS",
+    "WEB FLOW",
+    "BRÄNDING"
+  ]
+}

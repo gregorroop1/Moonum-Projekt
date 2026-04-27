@@ -1,0 +1,65 @@
+{
+  "menu": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "works": "Our Work",
+    "contact": "Contact"
+  },
+  "categories": {
+    "websites": "WEBSITES",
+    "software": "SOFTWARE",
+    "marketing": "MARKETING"
+  },
+  "pricing": {
+    "meta": "GET A QUOTE",
+    "plans": {
+      "01": "Simple Website",
+      "02": "Complex Website",
+      "03": "Challenge",
+      "04": "E-commerce",
+      "04-1": "SEO",
+      "04-2": "Maintenance",
+      "05": "CRM Software",
+      "05-1": "Process Automation",
+      "05-2": "Integrations",
+      "06": "Advertising",
+      "07": "Social Media Management"
+    }
+  },
+  "process": {
+    "01": {
+      "title": "01. Initial Contact",
+      "description": "Feel free to contact us and let's talk about your idea in more detail. Don't be afraid to say NO to us during negotiations, because it's important to us that you find a developer who meets exactly your needs. We map your goals, target audience, and expectations. This is the most important step because a well-functioning website starts with a clear vision. Our goal is to understand what you actually need — not just what you think you need."
+    },
+    "02": {
+      "title": "02. Analysis and Strategy",
+      "description": "We dive deep into your project. We analyze your business, competitors, and market. We create a clear strategy on how your website can stand out and bring real results. This also includes thinking through the structure, user experience (UX), and positioning."
+    },
+    "03": {
+      "title": "03. Design and Development",
+      "description": "We design a modern and visually distinctive website and develop it technically to be fast, secure, and SEO-friendly. Every detail is thought through — from user experience to loading speed."
+    },
+    "04": {
+      "title": "04. Joint Review",
+      "description": "We review the result together and put the finishing touches if necessary. We present the completed solution to you and collect feedback. If necessary, we make changes so that the final result fully meets your expectations."
+    },
+    "05": {
+      "title": "05. Publishing",
+      "description": "We bring your idea to life. We configure everything necessary — domain, hosting, technical details, and thorough testing. We ensure that the website works flawlessly on all devices and is ready to receive visitors."
+    },
+    "06": {
+      "title": "06. Support and Maintenance",
+      "description": "We don't disappear after the project ends. We offer continuous support, maintenance, and further development if necessary. Your website must evolve over time, and we help you along that journey."
+    }
+  },
+  "servicesList": {
+    "mobileApp": "Mobile App",
+    "webDesign": "Web Design",
+    "branding": "Branding",
+    "webflow": "Webflow Development",
+    "appDesign": "App Design",
+    "graphicDesign": "Graphic Design",
+    "wordpress": "Wordpress"
+  }
+}

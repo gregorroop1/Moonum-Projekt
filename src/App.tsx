@@ -11,6 +11,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+import { useTranslation } from 'react-i18next';
 import MoonumLanding from './components/MoonumLanding';
 import Marquee from './components/Marquee';
 import Navbar from './components/Navbar';
@@ -67,6 +68,13 @@ function SectionFallback({ minHeight }: { minHeight: string }) {
 }
 
 export default function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+    document.title = i18n.language === 'et' ? 'Moonum - Digitaalsed Elamused' : 'Moonum - Digital Experiences';
+  }, [i18n.language]);
+
   return (
     <main className="relative bg-[#0a0a0a] min-h-screen">
       <Navbar />

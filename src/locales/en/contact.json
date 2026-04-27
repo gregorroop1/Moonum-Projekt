@@ -1,0 +1,30 @@
+{
+  "header": {
+    "title1": "Say Hello!",
+    "title2": "and tell me<br />about your idea",
+    "description": "Have a great idea? Get in touch and let's talk."
+  },
+  "form": {
+    "name": {
+      "label": "Name:*",
+      "placeholder": "Hello..."
+    },
+    "email": {
+      "label": "Email:*",
+      "placeholder": "Where can I reply"
+    },
+    "company": {
+      "label": "Company name",
+      "placeholder": "Your company or website?"
+    },
+    "message": {
+      "label": "Message:*",
+      "placeholder": "Describe your project or idea in more detail..."
+    },
+    "services": {
+      "label": "What are you thinking of?*"
+    },
+    "submit": "Send",
+    "footer": "I will reply within 24 hours"
+  }
+}
