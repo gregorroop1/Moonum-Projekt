@@ -1,6 +1,44 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll } from 'motion/react';
-import { Warp } from "@paper-design/shaders-react";
+
+function WarpBackground() {
+  const [Warp, setWarp] = useState<React.ComponentType<any> | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    import('@paper-design/shaders-react').then((module) => {
+      if (isMounted) {
+        setWarp(() => module.Warp);
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  if (!Warp) {
+    return null;
+  }
+
+  return (
+    <Warp
+      style={{ height: '100%', width: '100%' }}
+      proportion={0.45}
+      softness={1}
+      distortion={0.25}
+      swirl={0.8}
+      swirlIterations={10}
+      shape="checks"
+      shapeScale={0.1}
+      scale={1}
+      rotation={0}
+      speed={1}
+      colors={['hsl(280, 90%, 15%)', 'hsl(300, 100%, 35%)', 'hsl(260, 80%, 25%)', 'hsl(320, 100%, 45%)']}
+    />
+  );
+}
 
 const ProcessSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -46,20 +84,7 @@ const ProcessSection: React.FC = () => {
     <section className="bg-zinc-800 text-white py-32 px-4 md:px-16 relative overflow-hidden" id="process">
       {/* Warp Shader Background */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <Warp
-          style={{ height: "100%", width: "100%" }}
-          proportion={0.45}
-          softness={1}
-          distortion={0.25}
-          swirl={0.8}
-          swirlIterations={10}
-          shape="checks"
-          shapeScale={0.1}
-          scale={1}
-          rotation={0}
-          speed={1}
-          colors={["hsl(280, 90%, 15%)", "hsl(300, 100%, 35%)", "hsl(260, 80%, 25%)", "hsl(320, 100%, 45%)"]}
-        />
+        <WarpBackground />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10" ref={containerRef}>

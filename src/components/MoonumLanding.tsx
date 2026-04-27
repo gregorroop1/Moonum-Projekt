@@ -3,15 +3,22 @@ import React, { useEffect, useRef } from 'react';
 const MoonumLanding: React.FC = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const layersRef = useRef<HTMLDivElement[]>([]);
+  const frameRef = useRef<number | null>(null);
+  const pointerRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Mouse Parallax Logic
-    const handleMouseMove = (e: MouseEvent) => {
-      const x = (window.innerWidth / 2 - e.pageX) / 25;
-      const y = (window.innerHeight / 2 - e.pageY) / 25;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    const shouldAnimateParallax = hasFinePointer && !prefersReducedMotion;
+
+    const updateTransforms = () => {
+      frameRef.current = null;
+
+      const x = (window.innerWidth / 2 - pointerRef.current.x) / 25;
+      const y = (window.innerHeight / 2 - pointerRef.current.y) / 25;
 
       // Rotate the 3D Canvas
       canvas.style.transform = `rotateX(${55 + y / 2}deg) rotateZ(${-25 + x / 2}deg)`;
@@ -26,6 +33,28 @@ const MoonumLanding: React.FC = () => {
       });
     };
 
+    // Mouse Parallax Logic
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!shouldAnimateParallax) {
+        return;
+      }
+
+      const deltaX = Math.abs(pointerRef.current.x - e.pageX);
+      const deltaY = Math.abs(pointerRef.current.y - e.pageY);
+      if (deltaX + deltaY < 2) {
+        return;
+      }
+
+      pointerRef.current.x = e.pageX;
+      pointerRef.current.y = e.pageY;
+
+      if (frameRef.current !== null) {
+        return;
+      }
+
+      frameRef.current = window.requestAnimationFrame(updateTransforms);
+    };
+
     // Entrance Animation
     canvas.style.opacity = '0';
     canvas.style.transform = 'rotateX(90deg) rotateZ(0deg) scale(0.8)';
@@ -36,10 +65,18 @@ const MoonumLanding: React.FC = () => {
       canvas.style.transform = 'rotateX(55deg) rotateZ(-25deg) scale(1)';
     }, 300);
 
-    window.addEventListener('mousemove', handleMouseMove);
+    if (shouldAnimateParallax) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+
+      if (shouldAnimateParallax) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
       clearTimeout(timeout);
     };
   }, []);
@@ -87,6 +124,7 @@ const MoonumLanding: React.FC = () => {
           width: 800px; height: 500px;
           transform-style: preserve-3d;
           transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          will-change: transform;
         }
 
         .layer {
@@ -96,10 +134,10 @@ const MoonumLanding: React.FC = () => {
           background-size: cover;
           background-position: center;
           transition: transform 0.5s ease;
+          will-change: transform;
         }
 
         .layer-1 { 
-          background-image: url('/llama.png'); 
           background-size: cover; 
           background-position: center; 
           border: 1px solid rgba(255,255,255,0.1);
@@ -199,10 +237,24 @@ const MoonumLanding: React.FC = () => {
 
         <div className="viewport">
           <div className="canvas-3d" ref={canvasRef}>
-            <div className="layer layer-1" ref={(el) => (layersRef.current[0] = el!)} style={{ backgroundImage: `url('/Alpaca_blizidega.jpeg')`, backgroundColor: '#111' }}>
+            <div className="layer layer-1" ref={(el) => { if (el) layersRef.current[0] = el; }} style={{ backgroundColor: '#111' }}>
+               <picture className="absolute inset-0 block h-full w-full">
+                 <source srcSet="/Alpaca_blizidega.webp" type="image/webp" />
+                 <img
+                   src="/Alpaca_blizidega.jpeg"
+                   alt="Alpaca hero visual"
+                   className="h-full w-full rounded-[16px] object-cover"
+                   loading="eager"
+                   decoding="async"
+                   fetchPriority="high"
+                   sizes="(max-width: 768px) 100vw, 800px"
+                   width={800}
+                   height={500}
+                 />
+               </picture>
                <div className="absolute inset-0 bg-black/40 rounded-[16px]"></div>
             </div>
-            <div className="layer layer-2" ref={(el) => (layersRef.current[1] = el!)}>
+            <div className="layer layer-2" ref={(el) => { if (el) layersRef.current[1] = el; }}>
                <div className="flex justify-between items-center w-full p-6 text-white">
                   <div className="font-sans font-bold tracking-[0.2em] text-lg flex items-center gap-2">
                      <div className="w-4 h-4 rounded-full border-2 border-white flex items-center justify-center">

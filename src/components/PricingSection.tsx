@@ -1,97 +1,107 @@
 import React from 'react';
 
-const PricingSection: React.FC = () => {
-  const plans = [
-    {
-      id: "01",
-      title: "Lihtne veebileht",
-      subtitle: "VEEBILEHED",
-      meta: "KÜSI HINDA",
-      isDark: true,
-      price: ""
-    },
-    {
-      id: "02",
-      title: "Keerulisem Veebileht",
-      subtitle: "VEEBILEHED",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "03",
-      title: "Väljakutse",
-      subtitle: "VEEBILEHED",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "04",
-      title: "E-pood",
-      subtitle: "VEEBILEHED",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "04-1",
-      title: "SEO",
-      subtitle: "VEEBILEHED",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "04-2",
-      title: "Hooldused",
-      subtitle: "VEEBILEHED",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "05",
-      title: "Klientide haldamise tarkvara",
-      subtitle: "TARKVARA",
-      meta: "KÜSI HINDA",
-      isDark: true,
-      price: ""
-    },
-    {
-      id: "05-1",
-      title: "Protsesside automatiseerimine",
-      subtitle: "TARKVARA",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "05-2",
-      title: "Integratsioonid",
-      subtitle: "TARKVARA",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "06",
-      title: "Reklaamid",
-      subtitle: "TURUNDUS",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    },
-    {
-      id: "07",
-      title: "Sotsiaalmeedia haldamine",
-      subtitle: "TURUNDUS",
-      meta: "KÜSI HINDA",
-      isDark: false,
-      price: ""
-    }
-  ];
+const CATEGORIES = ['VEEBILEHED', 'TARKVARA', 'TURUNDUS'] as const;
 
+const PRICING_PLANS = [
+  {
+    id: "01",
+    title: "Lihtne veebileht",
+    subtitle: "VEEBILEHED",
+    meta: "KÜSI HINDA",
+    isDark: true,
+    price: ""
+  },
+  {
+    id: "02",
+    title: "Keerulisem Veebileht",
+    subtitle: "VEEBILEHED",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "03",
+    title: "Väljakutse",
+    subtitle: "VEEBILEHED",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "04",
+    title: "E-pood",
+    subtitle: "VEEBILEHED",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "04-1",
+    title: "SEO",
+    subtitle: "VEEBILEHED",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "04-2",
+    title: "Hooldused",
+    subtitle: "VEEBILEHED",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "05",
+    title: "Klientide haldamise tarkvara",
+    subtitle: "TARKVARA",
+    meta: "KÜSI HINDA",
+    isDark: true,
+    price: ""
+  },
+  {
+    id: "05-1",
+    title: "Protsesside automatiseerimine",
+    subtitle: "TARKVARA",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "05-2",
+    title: "Integratsioonid",
+    subtitle: "TARKVARA",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "06",
+    title: "Reklaamid",
+    subtitle: "TURUNDUS",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  },
+  {
+    id: "07",
+    title: "Sotsiaalmeedia haldamine",
+    subtitle: "TURUNDUS",
+    meta: "KÜSI HINDA",
+    isDark: false,
+    price: ""
+  }
+] as const;
+
+type Category = (typeof CATEGORIES)[number];
+type PricingPlan = (typeof PRICING_PLANS)[number];
+
+const PLANS_BY_CATEGORY = CATEGORIES.reduce((acc, category) => {
+  acc[category] = PRICING_PLANS.filter((plan) => plan.subtitle === category);
+  return acc;
+}, {} as Record<Category, PricingPlan[]>);
+
+const PricingSection: React.FC = () => {
   return (
     <section className="bg-white text-black py-32 px-4 md:px-16 relative overflow-hidden" id="pricing">
       {/* Decorative center icon */}
@@ -131,14 +141,14 @@ const PricingSection: React.FC = () => {
 
       {/* Pricing List */}
       <div className="max-w-6xl mx-auto space-y-16">
-        {['VEEBILEHED', 'TARKVARA', 'TURUNDUS'].map((category) => (
+        {CATEGORIES.map((category) => (
           <div key={category}>
             <div className="flex items-center gap-4 mb-6 px-2 md:px-0">
               <div className="w-12 h-[2px] bg-black"></div>
               <h3 className="text-xl md:text-2xl font-display font-bold uppercase tracking-widest">{category}</h3>
             </div>
             <div className="space-y-4">
-              {plans.filter(p => p.subtitle === category).map((plan, index) => (
+              {PLANS_BY_CATEGORY[category].map((plan, index) => (
                 <div 
                   key={plan.id}
                   className={`flex flex-col md:flex-row items-center justify-between p-6 md:p-10 gap-6 transition-all duration-300 group ${

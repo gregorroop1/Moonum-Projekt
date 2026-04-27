@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { MoveRight, Zap } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Zap } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
