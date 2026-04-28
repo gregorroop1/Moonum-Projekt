@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CATEGORIES, PLANS_BY_CATEGORY, Category } from '../constants/data';
 import { scrollToSection } from '@/lib/smoothScroll';
+import { motion } from 'framer-motion';
 
 const PricingSection: React.FC = () => {
   const { t } = useTranslation(['pricing', 'data']);
@@ -45,21 +46,39 @@ const PricingSection: React.FC = () => {
       </div>
 
       {/* Category Tabs */}
-      <div className="max-w-xl mx-auto mb-12">
-        <div className="flex justify-center gap-0 bg-zinc-100 p-1.5">
-          {CATEGORIES.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3.5 text-[10px] md:text-xs font-black uppercase tracking-[0.15em] md:tracking-[0.2em] transition-all duration-300 flex-1 cursor-pointer ${
-                activeCategory === category
-                  ? 'bg-zinc-900 text-white shadow-lg'
-                  : 'text-zinc-400 hover:text-black hover:bg-zinc-200'
-              }`}
-            >
-              {t(`categories.${category}`, { ns: 'data' })}
-            </button>
-          ))}
+      <div className="max-w-7xl mx-auto mb-24 px-4 overflow-hidden">
+        <div className="flex flex-nowrap justify-center items-center">
+          {/* Static Rail Segment */}
+          <div className="w-6 md:w-12 lg:w-24 h-[1px] bg-zinc-200" />
+
+          {CATEGORIES.map((category) => {
+            const isActive = activeCategory === category;
+            return (
+              <React.Fragment key={category}>
+                <button
+                  onClick={() => setActiveCategory(category)}
+                  className="px-6 md:px-10 py-6 cursor-pointer outline-none group relative flex items-center justify-center"
+                >
+                  <span className={`text-base md:text-xl font-black uppercase tracking-tight transition-all duration-300 whitespace-nowrap ${
+                    isActive ? 'text-black' : 'text-zinc-400 hover:text-zinc-600'
+                  }`}>
+                    {t(`categories.${category}`, { ns: 'data' })}
+                  </span>
+                  
+                  {isActive && (
+                    <motion.div 
+                      layoutId="activeTabIndicator"
+                      className="absolute bottom-4 left-6 right-6 h-[2px] bg-black"
+                      transition={{ type: 'spring', bounce: 0.15, duration: 0.5 }}
+                    />
+                  )}
+                </button>
+                
+                {/* Static Rail Segment */}
+                <div className="w-6 md:w-12 lg:w-24 h-[1px] bg-zinc-300" />
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
 
