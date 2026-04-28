@@ -1,9 +1,6 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { 
-  Share2, 
-  Music, 
-  Camera, 
   Mail, 
   MoveRight, 
   ArrowDown, 
@@ -11,6 +8,8 @@ import {
   Monitor, 
   Target 
 } from 'lucide-react';
+import { FacebookIcon, TiktokIcon, InstagramIcon } from './icons';
+import { SITE_INFO } from '../constants/data';
 
 const ServicesSection: React.FC = () => {
   const { t } = useTranslation('services');
@@ -19,14 +18,14 @@ const ServicesSection: React.FC = () => {
       {/* Top Meta Bar */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-zinc-100 pb-6">
         <div className="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
-          <a href="#" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
-            <Share2 size={14} /> {t('social.facebook')}
+          <a href={SITE_INFO.social.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
+            <FacebookIcon size={14} /> {t('social.facebook')}
           </a>
-          <a href="#" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
-            <Music size={14} /> {t('social.tiktok')}
+          <a href={SITE_INFO.social.tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
+            <TiktokIcon size={14} /> {t('social.tiktok')}
           </a>
-          <a href="#" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
-            <Camera size={14} /> {t('social.instagram')}
+          <a href={SITE_INFO.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
+            <InstagramIcon size={14} /> {t('social.instagram')}
           </a>
         </div>
         
@@ -34,9 +33,9 @@ const ServicesSection: React.FC = () => {
           <div className="h-[1px] bg-zinc-200 w-full"></div>
         </div>
 
-        <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold">
-          <Mail size={14} /> {t('social.email')}
-        </div>
+        <a href={`mailto:${SITE_INFO.email}`} className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold hover:opacity-50 transition-opacity">
+          <Mail size={14} /> {SITE_INFO.email}
+        </a>
       </div>
 
       {/* Main Content Area */}
@@ -67,9 +66,9 @@ const ServicesSection: React.FC = () => {
               {t('sidebar')}
             </span>
             <div className="w-[1px] h-24 bg-zinc-200"></div>
-            <div className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center bg-black text-white cursor-pointer hover:bg-zinc-800 transition-colors shadow-xl">
+            <a href="#pricing" className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center bg-black text-white cursor-pointer hover:bg-zinc-800 transition-colors shadow-xl">
               <ArrowDown size={18} />
-            </div>
+            </a>
         </div>
 
         {/* Card 1 */}
@@ -79,7 +78,7 @@ const ServicesSection: React.FC = () => {
             <h3 className="text-xl font-display font-bold uppercase tracking-tight leading-tight">
               {t('cards.software')}
             </h3>
-            <a href="#" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all">
+            <a href="#pricing" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all">
               {t('cards.readMore')} <MoveRight size={12} />
             </a>
           </div>
@@ -92,7 +91,7 @@ const ServicesSection: React.FC = () => {
             <h3 className="text-xl font-display font-bold uppercase tracking-tight leading-tight">
               {t('cards.websites')}
             </h3>
-            <a href="#" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all">
+            <a href="#pricing" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all">
               {t('cards.readMore')} <MoveRight size={12} />
             </a>
           </div>
@@ -105,7 +104,7 @@ const ServicesSection: React.FC = () => {
             <h3 className="text-xl font-display font-bold uppercase tracking-tight leading-tight text-zinc-900">
               {t('cards.marketing')}
             </h3>
-            <a href="#" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all text-zinc-900">
+            <a href="#pricing" className="inline-flex items-center gap-4 text-[9px] uppercase tracking-widest font-bold group-hover:gap-6 transition-all text-zinc-900">
               {t('cards.readMore')} <MoveRight size={12} />
             </a>
           </div>

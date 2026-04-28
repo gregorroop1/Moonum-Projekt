@@ -1,4 +1,3 @@
-import React from 'react';
 import { Home, Briefcase, Tag, Grid, Mail } from 'lucide-react';
 
 export const MENU_ITEMS = [
@@ -25,6 +24,14 @@ export const PRICING_PLANS = [
   { id: "07", categoryId: "marketing", isDark: false, price: "" }
 ] as const;
 
+export type Category = (typeof CATEGORIES)[number];
+export type PricingPlan = (typeof PRICING_PLANS)[number];
+
+export const PLANS_BY_CATEGORY = CATEGORIES.reduce((acc, category) => {
+  acc[category] = PRICING_PLANS.filter((plan) => plan.categoryId === category);
+  return acc;
+}, {} as Record<Category, PricingPlan[]>);
+
 export const PROCESS_STEPS = [
   { id: "01", isActive: true },
   { id: "02", isActive: false },
@@ -43,3 +50,15 @@ export const SERVICES_LIST = [
   'graphicDesign',
   'wordpress'
 ];
+
+export const SITE_INFO = {
+  email: 'hello@moonum.com',
+  phone: '+372 5555 5555',
+  social: {
+    facebook: 'https://facebook.com/moonum',
+    tiktok: 'https://tiktok.com/@moonum',
+    instagram: 'https://instagram.com/moonum',
+    linkedin: 'https://linkedin.com/company/moonum',
+    twitter: 'https://twitter.com/moonum'
+  }
+};

@@ -20,6 +20,7 @@ const ServicesSection = lazy(() => import('./components/ServicesSection'));
 const PricingSection = lazy(() => import('./components/PricingSection'));
 const ProcessSection = lazy(() => import('./components/ProcessSection'));
 const ContactSection = lazy(() => import('./components/ContactSection'));
+import FooterSection from './components/FooterSection';
 
 function DeferredSection({
   children,
@@ -94,6 +95,7 @@ export default function App() {
           <ContactSection />
         </DeferredSection>
       </div>
+      <FooterSection />
     </main>
   );
 }

@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
-import { Zap } from 'lucide-react';
-import { SERVICES_LIST } from '../constants/data';
+import { Zap, ChevronDown } from 'lucide-react';
+import { CATEGORIES, PLANS_BY_CATEGORY } from '../constants/data';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
 
 const ContactSection: React.FC = () => {
   const { t } = useTranslation(['contact', 'data']);
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-
-  const toggleService = (service: string) => {
-    setSelectedServices(prev => 
-      prev.includes(service) 
-        ? prev.filter(s => s !== service)
-        : [...prev, service]
-    );
-  };
+  const [selectedPlan, setSelectedPlan] = useState<string>('');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
     <section className="bg-white text-black pt-20 pb-16 px-4 md:px-16" id="contact">
@@ -48,7 +43,7 @@ const ContactSection: React.FC = () => {
               <input 
                 type="text" 
                 placeholder={t('form.name.placeholder', { ns: 'contact' })}
-                className="w-full border-b border-zinc-200 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-300 text-base"
+                className="w-full border-b border-zinc-300 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-400 text-base"
                 required
               />
             </div>
@@ -57,19 +52,72 @@ const ContactSection: React.FC = () => {
               <input 
                 type="email" 
                 placeholder={t('form.email.placeholder', { ns: 'contact' })}
-                className="w-full border-b border-zinc-200 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-300 text-base"
+                className="w-full border-b border-zinc-300 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-400 text-base"
                 required
               />
             </div>
           </div>
 
-          <div className="space-y-3 text-left">
-            <label className="block text-xs font-bold uppercase tracking-widest">{t('form.company.label', { ns: 'contact' })}</label>
-            <input 
-              type="text" 
-              placeholder={t('form.company.placeholder', { ns: 'contact' })}
-              className="w-full border-b border-zinc-200 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-300 text-base"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            <div className="space-y-3">
+              <label className="block text-xs font-bold uppercase tracking-widest">{t('form.company.label', { ns: 'contact' })}</label>
+              <input 
+                type="text" 
+                placeholder={t('form.company.placeholder', { ns: 'contact' })}
+                className="w-full border-b border-zinc-300 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-400 text-base"
+              />
+            </div>
+
+            <div className="space-y-3 relative">
+              <label className="block text-xs font-bold uppercase tracking-widest">{t('form.services.label', { ns: 'contact' })}</label>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="w-full flex items-center justify-between border-b border-zinc-300 py-3 text-base text-left focus:border-black outline-none transition-colors bg-white relative z-50"
+                >
+                  <span className={selectedPlan ? 'text-black font-medium' : 'text-zinc-400'}>
+                    {selectedPlan ? t(`pricing.plans.${selectedPlan}`, { ns: 'data' }) : t('form.services.placeholder', { ns: 'contact', defaultValue: 'Select a package' })}
+                  </span>
+                  <ChevronDown className={`w-5 h-5 text-zinc-400 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isDropdownOpen && (
+                  <>
+                    <div 
+                      className="fixed inset-0 z-40" 
+                      onClick={() => setIsDropdownOpen(false)} 
+                    />
+                    <div className="absolute top-full left-0 w-full mt-2 bg-white border border-zinc-200 shadow-2xl max-h-[300px] overflow-y-auto z-50">
+                      {CATEGORIES.map(category => (
+                        <div key={category}>
+                          <div className="px-4 py-2 bg-zinc-50 text-[10px] font-black uppercase tracking-widest text-zinc-400 sticky top-0 border-b border-zinc-100 z-10">
+                            {t(`categories.${category}`, { ns: 'data' })}
+                          </div>
+                          {PLANS_BY_CATEGORY[category].map(plan => (
+                            <button
+                              key={plan.id}
+                              type="button"
+                              onClick={() => {
+                                setSelectedPlan(plan.id);
+                                setIsDropdownOpen(false);
+                              }}
+                              className={`w-full text-left px-4 py-3 text-sm transition-colors ${
+                                selectedPlan === plan.id 
+                                  ? 'bg-zinc-100 font-bold text-black border-l-2 border-black' 
+                                  : 'text-zinc-600 hover:bg-zinc-50 hover:text-black border-l-2 border-transparent'
+                              }`}
+                            >
+                              {t(`pricing.plans.${plan.id}`, { ns: 'data' })}
+                            </button>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
 
           <div className="space-y-3 text-left">
@@ -77,29 +125,9 @@ const ContactSection: React.FC = () => {
             <textarea 
               rows={4}
               placeholder={t('form.message.placeholder', { ns: 'contact' })}
-              className="w-full border-b border-zinc-200 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-300 text-base resize-none"
+              className="w-full border-b border-zinc-300 py-3 focus:border-black outline-none transition-colors placeholder:text-zinc-400 text-base resize-none"
               required
             ></textarea>
-          </div>
-
-          <div className="space-y-5 text-left">
-            <label className="block text-xs font-bold uppercase tracking-widest text-center md:text-left">{t('form.services.label', { ns: 'contact' })}</label>
-            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-              {SERVICES_LIST.map(service => (
-                <button
-                  key={service}
-                  type="button"
-                  onClick={() => toggleService(service)}
-                  className={`px-4 py-2 rounded-full text-xs font-medium border transition-all ${
-                    selectedServices.includes(service)
-                      ? 'bg-black text-white border-black'
-                      : 'bg-white text-zinc-900 border-zinc-200 hover:border-zinc-400'
-                  }`}
-                >
-                  {t(`servicesList.${service}`, { ns: 'data' })}
-                </button>
-              ))}
-            </div>
           </div>
 
           {/* Submit */}
@@ -107,7 +135,7 @@ const ContactSection: React.FC = () => {
             <div className="relative">
               <button 
                 type="submit"
-                className="bg-black text-white px-8 py-3.5 rounded-full text-base font-bold flex items-center gap-3 hover:scale-105 transition-transform group"
+                className={cn(buttonVariants({ variant: "polygon2" }), "px-8 py-5 text-[10px] flex items-center gap-3 group")}
               >
                 {t('form.submit', { ns: 'contact' })}
                 <Zap className="fill-current group-hover:animate-pulse" size={18} />

@@ -19,6 +19,7 @@ const buttonVariants = cva(
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
         polygon: "rounded-none bg-zinc-200 text-black hover:bg-brand-primary hover:text-white hover:-translate-y-1 [clip-path:polygon(0_0,100%_0,100%_70%,85%_100%,0_100%)] uppercase tracking-widest font-bold transition-all",
+        polygon2: "rounded-none bg-black text-white hover:bg-zinc-800 hover:-translate-y-1 [clip-path:polygon(0_0,100%_0,100%_70%,85%_100%,0_100%)] uppercase tracking-widest font-bold transition-all"
       },
       size: {
         default:

@@ -8,5 +8,41 @@
   "langSwitch": {
     "et": "ET",
     "en": "EN"
+  },
+  "footer": {
+    "description": "Loome digitaalseid elamusi, mis paistavad silma. Tõsta oma bränd uuele tasemele meie innovaatiliste lahendustega.",
+    "cta": "Võta Ühendust",
+    "navigation": "Navigatsioon",
+    "socials": "Sotsiaalmeedia",
+    "contact": "Kontakt",
+    "location": "Tallinn, Eesti",
+    "rights": "Kõik õigused kaitstud.",
+    "privacy": "Privaatsuspoliitika",
+    "terms": "Kasutustingimused"
+  },
+  "privacyPolicy": {
+    "title": "Privaatsuspoliitika",
+    "sections": {
+      "1": {
+        "title": "1. Millist teavet me kogume",
+        "content": "Kui kasutate meie kontaktivormi, kogume isikuandmeid, mida te meile vabatahtlikult esitate, sealhulgas teie nimi, e-posti aadress, ettevõtte nimi ja sõnumi sisu."
+      },
+      "2": {
+        "title": "2. Kuidas me teie teavet kasutame",
+        "content": "Kogutud teavet kasutame peamiselt teie päringutele vastamiseks, klienditoe pakkumiseks ja teiega suhtlemiseks seoses soovitud teenustega. Me ei müü ega rendi teie isikuandmeid kolmandatele osapooltele."
+      },
+      "3": {
+        "title": "3. Andmeturve",
+        "content": "Rakendame asjakohaseid tehnilisi ja korralduslikke turvameetmeid, mis on loodud töödeldavate isikuandmete turvalisuse kaitsmiseks. Kuid pidage meeles, et me ei saa garanteerida interneti 100% turvalisust."
+      },
+      "4": {
+        "title": "4. Teie privaatsusõigused",
+        "content": "Sõltuvalt teie asukohast võib teil olla õigus taotleda juurdepääsu isikuandmetele, mida me teie kohta kogume, seda teavet muuta või teatud asjaoludel kustutada. Oma isikuandmete ülevaatamise, värskendamise või kustutamise taotlemiseks võtke meiega ühendust meie e-posti aadressil."
+      },
+      "5": {
+        "title": "5. Selle poliitika uuendused",
+        "content": "Võime seda privaatsusteatist aeg-ajalt uuendada. Uuendatud versiooni tähistab uuendatud \"Muudetud\" kuupäev ja uuendatud versioon jõustub niipea, kui see on kättesaadav."
+      }
+    }
   }
 }

@@ -1,14 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { CATEGORIES, PRICING_PLANS } from '../constants/data';
-
-type Category = (typeof CATEGORIES)[number];
-type PricingPlan = (typeof PRICING_PLANS)[number];
-
-const PLANS_BY_CATEGORY = CATEGORIES.reduce((acc, category) => {
-  acc[category] = PRICING_PLANS.filter((plan) => plan.categoryId === category);
-  return acc;
-}, {} as Record<Category, PricingPlan[]>);
+import { CATEGORIES, PLANS_BY_CATEGORY } from '../constants/data';
 
 const PricingSection: React.FC = () => {
   const { t } = useTranslation(['pricing', 'data']);
@@ -59,7 +51,8 @@ const PricingSection: React.FC = () => {
             </div>
             <div className="space-y-4">
               {PLANS_BY_CATEGORY[category].map((plan, index) => (
-                <div 
+                <a 
+                  href="#contact"
                   key={plan.id}
                   className={`flex flex-col md:flex-row items-center justify-between p-6 md:p-10 gap-6 transition-all duration-300 group ${
                     plan.isDark 
@@ -93,7 +86,7 @@ const PricingSection: React.FC = () => {
                       {t('pricing.meta', { ns: 'data' })}
                     </span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
