@@ -15,7 +15,25 @@
     "software": "TARKVARA",
     "websites": "VEEBILEHED",
     "marketing": "TURUNDUS",
-    "readMore": "LOE EDASI"
+    "readMore": "LOE EDASI",
+    "contactUs": "Võta Ühendust",
+    "info": {
+      "software": {
+        "title": "Eritarkvara Arendus",
+        "description": "Arendame skaleeritavaid ja suure jõudlusega tarkvaralahendusi vastavalt teie ärivajadustele. Alates keerulistest infosüsteemidest kuni idufirmadeni.",
+        "features": ["Pilvelahendused", "API Integratsioonid", "Andmebaasi Disain", "Turvaauditid"]
+      },
+      "websites": {
+        "title": "Premium Veebidisain",
+        "description": "Visuaalselt kütkestavad ja kõrge konversiooniga veebilehed. Keskendume kiirusele, ligipääsetavusele ja unikaalsele loojutustusele.",
+        "features": ["React & Next.js", "Haldusliidesed", "Jõudluse Optimeerimine", "SEO Strateegia"]
+      },
+      "marketing": {
+        "title": "Strateegiline Turundus",
+        "description": "Andmepõhised turundusstrateegiad, mis laiendavad teie brändi ulatust ja suurendavad kaasamist teie sihtrühmaga.",
+        "features": ["Kasvustrateegia", "Sisuturundus", "Sotsiaalmeedia Reklaam", "Konversiooni Analüüs"]
+      }
+    }
   },
   "marquee": [
     "VEEBIDISAIN",

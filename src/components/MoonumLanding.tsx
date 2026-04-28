@@ -49,8 +49,8 @@ const MoonumLanding: React.FC = () => {
               
               <div className="absolute inset-0 border border-white/10 bg-cover bg-center transition-transform duration-500 will-change-transform rounded-2xl overflow-hidden bg-[#111]" ref={(el) => { if (el) layerRefs.current[0] = el; }}>
                 <picture className="absolute inset-0 block h-full w-full">
-                  <source srcSet="/Alpaca_blizidega.webp" type="image/webp" />
-                  <img src="/Alpaca_blizidega.jpeg" alt="Alpaca hero visual" className="h-full w-full rounded-[16px] object-cover" loading="eager" decoding="async" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" width={800} height={500} />
+                  <source srcSet="Alpaca_blizidega.webp" type="image/webp" />
+                  <img src="Alpaca_blizidega.jpeg" alt="Alpaca hero visual" className="h-full w-full rounded-[16px] object-cover" loading="eager" decoding="async" fetchPriority="high" sizes="(max-width: 768px) 100vw, 800px" width={800} height={500} />
                 </picture>
                 <div className="absolute inset-0 bg-black/40 rounded-[16px]"></div>
               </div>

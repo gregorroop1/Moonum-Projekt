@@ -25,10 +25,12 @@ import FooterSection from './components/FooterSection';
 function DeferredSection({
   children,
   fallback,
+  id,
   rootMargin = '500px 0px',
 }: {
   children: ReactNode;
   fallback: ReactNode;
+  id?: string;
   rootMargin?: string;
 }) {
   const anchorRef = useRef<HTMLDivElement | null>(null);
@@ -58,7 +60,7 @@ function DeferredSection({
   }, [isVisible, rootMargin]);
 
   return (
-    <div ref={anchorRef}>
+    <div ref={anchorRef} id={id}>
       {isVisible ? <Suspense fallback={fallback}>{children}</Suspense> : fallback}
     </div>
   );
@@ -82,16 +84,16 @@ export default function App() {
       <MoonumLanding />
       <div className="relative z-20">
         <Marquee />
-        <DeferredSection fallback={<SectionFallback minHeight="min-h-[60vh]" />}>
+        <DeferredSection id="services" fallback={<SectionFallback minHeight="min-h-[60vh]" />}>
           <ServicesSection />
         </DeferredSection>
-        <DeferredSection fallback={<SectionFallback minHeight="min-h-[65vh]" />}>
+        <DeferredSection id="pricing" fallback={<SectionFallback minHeight="min-h-[65vh]" />}>
           <PricingSection />
         </DeferredSection>
-        <DeferredSection fallback={<SectionFallback minHeight="min-h-[70vh]" />}>
+        <DeferredSection id="process" fallback={<SectionFallback minHeight="min-h-[70vh]" />}>
           <ProcessSection />
         </DeferredSection>
-        <DeferredSection fallback={<SectionFallback minHeight="min-h-[55vh]" />}>
+        <DeferredSection id="contact" fallback={<SectionFallback minHeight="min-h-[55vh]" />}>
           <ContactSection />
         </DeferredSection>
       </div>

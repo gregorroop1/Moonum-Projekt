@@ -25,6 +25,32 @@
       "05-2": "Integratsioonid",
       "06": "Reklaamid",
       "07": "Sotsiaalmeedia haldamine"
+    },
+    "descriptions": {
+      "01": "Puhas ja professionaalne veebileht, mis sobib ideaalselt väikeettevõtetele ja isiklikele brändidele veebis kohaloleku loomiseks.",
+      "02": "Funktsioonirikas veebileht kohandatud funktsionaalsuse, animatsioonide ja täiustatud kasutajasuhtlusega vastavalt sinu visioonile.",
+      "03": "On midagi ainulaadset meeles? Meile meeldivad ambitsioonikad projektid, mis ületavad loovuse ja tehnilisi piire.",
+      "04": "Täisfunktsionaalne e-pood maksete integreerimise, laohalduse ja konversioonile optimeeritud disainiga.",
+      "04-1": "Otsingumootori optimeerimine, et suurendada sinu nähtavust ja suunata orgaanilist liiklust sinu veebilehele.",
+      "04-2": "Pidev veebilehe uuendamine, turvapaigad, jõudluse jälgimine ja sisu haldamine.",
+      "05": "Kohandatud CRM lahendused klientide, müügitoru ja oluliste ärisuhete tõhusaks haldamiseks.",
+      "05-1": "Korduvate ülesannete ja töövoogude sujuvamaks muutmine intelligentsete automatiseerimislahendustega.",
+      "05-2": "Ühenda oma olemasolevad tööriistad ja platvormid sujuvaks andmevooluks kogu ettevõttes.",
+      "06": "Sihitud reklaamikampaaniad Google'is, Metas ja teistel platvormidel investeeringutasuvuse maksimeerimiseks.",
+      "07": "Järjepidev ja kaasahaarav sotsiaalmeedia kohalolek strateegia, sisuloomise ja kogukonna haldamisega."
+    },
+    "features": {
+      "01": ["Kohanduv", "Kiire", "SEO-valmis"],
+      "02": ["Kohandatud kood", "Animatsioonid", "CMS"],
+      "03": ["Kohandatud", "Innovaatiline", "Piiramatu"],
+      "04": ["Maksed", "Laohaldus", "Analüütika"],
+      "04-1": ["Märksõnad", "Optimeerimine", "Aruanded"],
+      "04-2": ["Uuendused", "Turvalisus", "Jälgimine"],
+      "05": ["Töölaud", "Automatiseerimine", "Aruanded"],
+      "05-1": ["Töövood", "Integratsioon", "Tõhusus"],
+      "05-2": ["API", "Andmete sünk", "Skaleeritav"],
+      "06": ["Google Ads", "Meta Ads", "ROI jälgimine"],
+      "07": ["Strateegia", "Sisu", "Kasv"]
     }
   },
   "process": {

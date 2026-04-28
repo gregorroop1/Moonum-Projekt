@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CATEGORIES, PLANS_BY_CATEGORY } from '../constants/data';
+import { CATEGORIES, PLANS_BY_CATEGORY, Category } from '../constants/data';
+import { scrollToSection } from '@/lib/smoothScroll';
 
 const PricingSection: React.FC = () => {
   const { t } = useTranslation(['pricing', 'data']);
+  const [activeCategory, setActiveCategory] = useState<Category>(CATEGORIES[0]);
+
   return (
-    <section className="bg-white text-black py-32 px-4 md:px-16 relative overflow-hidden" id="pricing">
+    <section className="bg-white text-black py-18 px-4 md:px-16 relative overflow-hidden">
       {/* Decorative center icon */}
       <div className="flex justify-center mb-6">
         <div className="relative w-12 h-12">
@@ -21,7 +24,7 @@ const PricingSection: React.FC = () => {
       </div>
 
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-20 relative">
+      <div className="text-center max-w-2xl mx-auto mb-14 relative">
         <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6 relative z-10">
           {t('header.title', { ns: 'pricing' })}
         </h2>
@@ -41,56 +44,103 @@ const PricingSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Pricing List */}
-      <div className="max-w-6xl mx-auto space-y-16">
-        {CATEGORIES.map((category) => (
-          <div key={category}>
-            <div className="flex items-center gap-4 mb-6 px-2 md:px-0">
-              <div className="w-12 h-[2px] bg-black"></div>
-              <h3 className="text-xl md:text-2xl font-display font-bold uppercase tracking-widest">{t(`categories.${category}`, { ns: 'data' })}</h3>
-            </div>
-            <div className="space-y-4">
-              {PLANS_BY_CATEGORY[category].map((plan, index) => (
-                <a 
-                  href="#contact"
-                  key={plan.id}
-                  className={`flex flex-col md:flex-row items-center justify-between p-6 md:p-10 gap-6 transition-all duration-300 group ${
-                    plan.isDark 
-                    ? 'bg-zinc-900 text-white shadow-2xl' 
-                    : 'bg-white border border-zinc-200 hover:border-zinc-400'
-                  }`}
-                >
-                  <div className="flex items-center gap-8 w-full md:w-auto">
-                    {/* Number Box */}
-                    <div className={`w-12 h-12 flex items-center justify-center font-black text-lg ${
-                      plan.isDark ? 'bg-zinc-800' : 'bg-black text-white'
-                    }`}>
-                      {index + 1}
-                    </div>
-                    
-                    {/* Content */}
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight">
-                        {t(`pricing.plans.${plan.id}`, { ns: 'data' })} <span className="text-zinc-500 ml-2">{plan.price}</span>
-                      </h3>
-                      <p className={`text-xs uppercase tracking-widest mt-1 ${plan.isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>
-                        {t(`categories.${plan.categoryId}`, { ns: 'data' })}
-                      </p>
-                    </div>
-                  </div>
+      {/* Category Tabs */}
+      <div className="max-w-xl mx-auto mb-12">
+        <div className="flex justify-center gap-0 bg-zinc-100 p-1.5">
+          {CATEGORIES.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-3.5 text-[10px] md:text-xs font-black uppercase tracking-[0.15em] md:tracking-[0.2em] transition-all duration-300 flex-1 cursor-pointer ${
+                activeCategory === category
+                  ? 'bg-zinc-900 text-white shadow-lg'
+                  : 'text-zinc-400 hover:text-black hover:bg-zinc-200'
+              }`}
+            >
+              {t(`categories.${category}`, { ns: 'data' })}
+            </button>
+          ))}
+        </div>
+      </div>
 
-                  {/* Duration Meta */}
-                  <div className="flex items-center gap-6 w-full md:w-auto justify-end">
-                    <div className={`h-8 w-[1px] hidden md:block ${plan.isDark ? 'bg-zinc-700' : 'bg-zinc-200'}`}></div>
-                    <span className={`text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap`}>
-                      {t('pricing.meta', { ns: 'data' })}
-                    </span>
+      {/* Cards Grid */}
+      {/* Pricing Rows */}
+      <div className="max-w-6xl mx-auto">
+        <div
+          key={activeCategory}
+          className="space-y-4 animate-[fadeInUp_0.35s_ease-out]"
+        >
+          {PLANS_BY_CATEGORY[activeCategory].map((plan, index) => (
+            <a 
+              href="#contact"
+              onClick={(e) => {
+                scrollToSection(e, '#contact');
+                (window as any).__lastSelectedPlan = plan.id;
+                window.dispatchEvent(new CustomEvent('select-plan', { detail: plan.id }));
+              }}
+              key={plan.id}
+              className={`flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-8 gap-4 md:gap-8 transition-all duration-300 group no-underline ${
+                plan.isDark 
+                ? 'bg-zinc-900 text-white shadow-2xl' 
+                : 'bg-white border border-zinc-200 hover:border-zinc-400'
+              }`}
+            >
+              {/* Left: Number + Content */}
+              <div className="flex items-start gap-6 md:gap-8 w-full md:w-auto md:flex-1">
+                {/* Number Box */}
+                <div className={`w-11 h-11 flex-shrink-0 flex items-center justify-center font-black text-sm ${
+                  plan.isDark ? 'bg-zinc-800' : 'bg-black text-white'
+                }`}>
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                
+                {/* Title + Description + Features */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-lg md:text-xl font-black uppercase tracking-tight leading-tight">
+                    {t(`pricing.plans.${plan.id}`, { ns: 'data' })}
+                  </h3>
+                  <p className={`text-xs leading-relaxed mt-1.5 max-w-lg ${
+                    plan.isDark ? 'text-zinc-400' : 'text-zinc-500'
+                  }`}>
+                    {t(`pricing.descriptions.${plan.id}`, { ns: 'data' })}
+                  </p>
+                  {/* Feature Pills */}
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {(t(`pricing.features.${plan.id}`, { ns: 'data', returnObjects: true }) as string[]).map((feature: string, i: number) => (
+                      <span
+                        key={i}
+                        className={`text-[9px] md:text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 ${
+                          plan.isDark
+                            ? 'bg-zinc-800 text-zinc-400'
+                            : 'bg-zinc-100 text-zinc-500'
+                        }`}
+                      >
+                        {feature}
+                      </span>
+                    ))}
                   </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
+                </div>
+              </div>
+
+              {/* Right: CTA */}
+              <div className="flex items-center gap-6 w-full md:w-auto justify-end flex-shrink-0">
+                <div className={`h-8 w-[1px] hidden md:block ${plan.isDark ? 'bg-zinc-700' : 'bg-zinc-200'}`}></div>
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap flex items-center gap-2">
+                  {t('pricing.meta', { ns: 'data' })}
+                  <svg
+                    className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -25,6 +25,32 @@
       "05-2": "Integrations",
       "06": "Advertising",
       "07": "Social Media Management"
+    },
+    "descriptions": {
+      "01": "A clean, professional website perfect for small businesses and personal brands looking to establish an online presence.",
+      "02": "Feature-rich websites with custom functionality, animations, and advanced user interactions tailored to your vision.",
+      "03": "Have something unique in mind? We love ambitious projects that push creative and technical boundaries.",
+      "04": "Full-featured online stores with payment integration, inventory management, and conversion-optimized design.",
+      "04-1": "Search engine optimization to boost your visibility and drive organic traffic to your website.",
+      "04-2": "Ongoing website updates, security patches, performance monitoring, and content management.",
+      "05": "Custom CRM solutions to manage your customers, sales pipeline, and key business relationships effectively.",
+      "05-1": "Streamline repetitive tasks and workflows with intelligent automation solutions built for your needs.",
+      "05-2": "Connect your existing tools and platforms for seamless data flow across your entire business.",
+      "06": "Targeted advertising campaigns across Google, Meta, and other platforms to maximize your return on investment.",
+      "07": "Consistent, engaging social media presence with strategy, content creation, and community management."
+    },
+    "features": {
+      "01": ["Responsive", "Fast", "SEO-Ready"],
+      "02": ["Custom Code", "Animations", "CMS"],
+      "03": ["Custom", "Innovative", "Unlimited"],
+      "04": ["Payments", "Inventory", "Analytics"],
+      "04-1": ["Keywords", "Optimization", "Reports"],
+      "04-2": ["Updates", "Security", "Monitoring"],
+      "05": ["Dashboard", "Automation", "Reports"],
+      "05-1": ["Workflows", "Integration", "Efficiency"],
+      "05-2": ["API", "Data Sync", "Scalable"],
+      "06": ["Google Ads", "Meta Ads", "ROI Tracking"],
+      "07": ["Strategy", "Content", "Growth"]
     }
   },
   "process": {

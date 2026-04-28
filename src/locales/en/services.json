@@ -15,7 +15,25 @@
     "software": "SOFTWARE",
     "websites": "WEBSITES",
     "marketing": "MARKETING",
-    "readMore": "READ MORE"
+    "readMore": "READ MORE",
+    "contactUs": "Contact Us",
+    "info": {
+      "software": {
+        "title": "Custom Software Development",
+        "description": "We build scalable, high-performance software solutions tailored to your specific business needs. From complex enterprise systems to innovative startups.",
+        "features": ["Cloud Solutions", "API Integration", "Database Design", "Security Audits"]
+      },
+      "websites": {
+        "title": "Premium Website Design",
+        "description": "Stunning, high-converting websites built with modern technology. We focus on speed, accessibility, and unique visual storytelling.",
+        "features": ["React & Next.js", "Headless CMS", "Performance Optimization", "SEO Strategy"]
+      },
+      "marketing": {
+        "title": "Strategic Digital Marketing",
+        "description": "Data-driven marketing strategies that amplify your brand's reach and drive meaningful engagement with your target audience.",
+        "features": ["Growth Strategy", "Content Marketing", "Social Ads", "Conversion Analysis"]
+      }
+    }
   },
   "marquee": [
     "WEB DESIGN",

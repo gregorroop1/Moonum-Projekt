@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 import { InstagramIcon, LinkedinIcon, TwitterIcon } from './icons';
 import PrivacyPolicyModal from './PrivacyPolicyModal';
+import { scrollToSection } from '@/lib/smoothScroll';
 
 const FooterSection: React.FC = () => {
   const { t } = useTranslation(['common', 'data']);
@@ -28,7 +29,8 @@ const FooterSection: React.FC = () => {
           
           <div className="flex flex-col items-start md:items-end gap-6">
             <a 
-              href="#contact" 
+              href="#contact"
+              onClick={(e) => scrollToSection(e, '#contact')}
               className="inline-flex items-center gap-2 text-xl md:text-3xl font-display font-bold uppercase tracking-widest hover:text-zinc-300 transition-colors group"
             >
               {t('footer.cta', { ns: 'common' })}
@@ -47,6 +49,7 @@ const FooterSection: React.FC = () => {
                 <li key={item.translationKey}>
                   <a 
                     href={item.href}
+                    onClick={(e) => scrollToSection(e, item.href)}
                     className="text-sm md:text-base font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors inline-flex items-center gap-2"
                   >
                     <span className="text-zinc-600">{item.icon}</span>

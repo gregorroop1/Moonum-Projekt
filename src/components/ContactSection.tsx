@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Zap, ChevronDown } from 'lucide-react';
 import { CATEGORIES, PLANS_BY_CATEGORY } from '../constants/data';
 import { cn } from '@/lib/utils';
@@ -7,18 +7,32 @@ import { buttonVariants } from '@/components/ui/button';
 
 const ContactSection: React.FC = () => {
   const { t } = useTranslation(['contact', 'data']);
-  const [selectedPlan, setSelectedPlan] = useState<string>('');
+  const [selectedPlan, setSelectedPlan] = useState<string>(() => {
+    return (window as any).__lastSelectedPlan || '';
+  });
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  useEffect(() => {
+    const handleSelectPlan = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      if (customEvent.detail) {
+        setSelectedPlan(customEvent.detail);
+      }
+    };
+
+    window.addEventListener('select-plan', handleSelectPlan);
+    return () => window.removeEventListener('select-plan', handleSelectPlan);
+  }, []);
+
   return (
-    <section className="bg-white text-black pt-20 pb-16 px-4 md:px-16" id="contact">
+    <section className="bg-white text-black pt-20 pb-16 px-4 md:px-16">
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         {/* Header */}
         <div className="mb-10 relative text-center">
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tighter leading-[1.1] uppercase">
-            <span className="text-zinc-300">{t('header.title1', { ns: 'contact' })}</span> <Trans i18nKey="header.title2" ns="contact" components={{ br: <br /> }} />
-            <div className="inline-block md:block lg:inline-block ml-0 md:ml-4 mt-4 md:mt-0 align-middle">
-               <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 h-auto mx-auto transform -rotate-6 md:rotate-0">
+            <span className="text-zinc-300">{t('header.title1', { ns: 'contact' })}</span> {t('header.title2', { ns: 'contact' })}
+            <div className="inline-block md:block lg:inline-block ml-0 md:ml-4 mb-2 md:mt-0 align-middle">
+               <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 md:w-32 h-auto mx-auto transform md:rotate-0 block">
                  <path d="M2 20H118M118 20L100 8M118 20L100 32" stroke="black" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                </svg>
             </div>

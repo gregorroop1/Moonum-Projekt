@@ -51,7 +51,7 @@ const ProcessSection: React.FC = () => {
   });
 
   return (
-    <section className="bg-zinc-800 text-white py-32 px-4 md:px-16 relative overflow-hidden" id="process">
+    <section className="bg-zinc-800 text-white py-32 px-4 md:px-16 relative overflow-hidden">
       {/* Warp Shader Background */}
       <div className="absolute inset-0 z-0 opacity-40">
         <WarpBackground />

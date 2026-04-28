@@ -4,6 +4,7 @@ import { MENU_ITEMS } from '../constants/data';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../../components/ui/button';
 import { useTranslation } from 'react-i18next';
+import { scrollToSection } from '@/lib/smoothScroll';
 
 const Navbar: React.FC = () => {
   const { t, i18n } = useTranslation('common');
@@ -63,6 +64,7 @@ const Navbar: React.FC = () => {
               <a 
                 key={index} 
                 href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
                 className="text-zinc-400 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors"
               >
                 {t(item.translationKey)}
@@ -80,7 +82,8 @@ const Navbar: React.FC = () => {
         {/* CTA Nupp */}
         <div className="hidden md:block">
            <a 
-             href="#"
+             href="#contact"
+             onClick={(e) => scrollToSection(e, '#contact')}
              className={cn(buttonVariants({ variant: "polygon" }), "px-8 py-5 text-[10px]")}
            >
              {t('nav.cta')}
@@ -122,14 +125,7 @@ const Navbar: React.FC = () => {
             isSideExpanded ? "w-40" : "w-14"
           )}
         >
-          <div className="flex items-center justify-between md:justify-end mb-2">
-            <button
-              type="button"
-              className="md:hidden text-zinc-400 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors flex items-center gap-1 p-2"
-              onClick={() => i18n.changeLanguage(i18n.language === 'et' ? 'en' : 'et')}
-            >
-              <Globe size={12} /> {i18n.language === 'et' ? 'EN' : 'ET'}
-            </button>
+          <div className="flex items-center justify-end mb-2">
             <button
               type="button"
               className="md:hidden flex items-center justify-end text-zinc-200 hover:text-white hover:bg-zinc-800/50 p-2 rounded-2xl transition-colors"
@@ -141,13 +137,34 @@ const Navbar: React.FC = () => {
             </button>
           </div>
 
+          {/* Language Switcher in Side Menu */}
+          <button
+            onClick={() => i18n.changeLanguage(i18n.language === 'et' ? 'en' : 'et')}
+            className="flex justify-end items-center gap-4 text-zinc-400 hover:text-white hover:bg-zinc-800/50 p-1.5 rounded-2xl transition-all duration-300 relative group overflow-hidden w-full"
+            title={!isHovered && !isMobileSideExpanded ? (i18n.language === 'et' ? 'English' : 'Eesti') : undefined}
+          >
+            <span 
+              className={cn(
+                "text-sm font-medium whitespace-nowrap z-10 transition-all duration-300",
+                isSideExpanded ? "opacity-100 delay-100 relative" : "opacity-0 absolute right-10"
+              )}
+            >
+              {i18n.language === 'et' ? 'English' : 'Eesti'}
+            </span>
+            <div className="shrink-0 relative z-10">
+              <Globe size={20} strokeWidth={1.5} />
+            </div>
+          </button>
+
+          <div className="h-px bg-zinc-800/50 my-1 mx-2" />
+
           {MENU_ITEMS.map((item, index) => (
             <a
               key={index}
               href={item.href}
               className="flex justify-end items-center gap-4 text-zinc-400 hover:text-white hover:bg-zinc-800/50 p-1.5 rounded-2xl transition-all duration-300 relative group overflow-hidden"
               title={!isHovered && !isMobileSideExpanded ? t(item.translationKey) : undefined}
-              onClick={() => setIsMobileSideExpanded(false)}
+              onClick={(e) => { scrollToSection(e, item.href); setIsMobileSideExpanded(false); }}
             >              
               <span 
                 className={cn(
