@@ -112,10 +112,10 @@ const Navbar: React.FC = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={cn(
-          "fixed top-4 md:top-1/2 md:-translate-y-1/2 right-3 md:right-6 z-50 transition-all duration-700 ease-in-out",
-          isMobileSideExpanded ? "translate-x-0 opacity-100" : "translate-x-[150%] opacity-0 pointer-events-none",
+          "fixed top-4 md:top-1/2 md:-translate-y-1/2 right-3 md:right-auto md:left-6 z-50 transition-all duration-700 ease-in-out",
+          isMobileSideExpanded ? "translate-x-0 opacity-100" : "translate-x-[150%] md:-translate-x-[150%] opacity-0 pointer-events-none",
           (isScrolled && !isMobileSideExpanded) && "md:translate-x-0 md:opacity-100 md:pointer-events-auto",
-          (!isScrolled && !isMobileSideExpanded) && "md:translate-x-[150%] md:opacity-0 md:pointer-events-none"
+          (!isScrolled && !isMobileSideExpanded) && "md:translate-x-[150%] md:-translate-x-[150%] md:opacity-0 md:pointer-events-none"
         )}
       >
         <div 
@@ -140,18 +140,18 @@ const Navbar: React.FC = () => {
           {/* Language Switcher in Side Menu */}
           <button
             onClick={() => i18n.changeLanguage(i18n.language === 'et' ? 'en' : 'et')}
-            className="flex justify-end items-center gap-4 text-zinc-400 hover:text-white hover:bg-zinc-800/50 p-1.5 rounded-2xl transition-all duration-300 relative group overflow-hidden w-full"
+            className="flex justify-end md:justify-start items-center gap-4 text-zinc-400 hover:text-white hover:bg-zinc-800/50 p-1.5 rounded-2xl transition-all duration-300 relative group overflow-hidden w-full"
             title={!isHovered && !isMobileSideExpanded ? (i18n.language === 'et' ? 'English' : 'Eesti') : undefined}
           >
             <span 
               className={cn(
-                "text-sm font-medium whitespace-nowrap z-10 transition-all duration-300",
-                isSideExpanded ? "opacity-100 delay-100 relative" : "opacity-0 absolute right-10"
+                "text-sm font-medium whitespace-nowrap z-10 transition-all duration-300 order-1 md:order-2",
+                isSideExpanded ? "opacity-100 delay-100 relative" : "opacity-0 absolute right-10 md:left-10 md:right-auto"
               )}
             >
               {i18n.language === 'et' ? 'English' : 'Eesti'}
             </span>
-            <div className="shrink-0 relative z-10">
+            <div className="shrink-0 relative z-10 order-2 md:order-1">
               <Globe size={20} strokeWidth={1.5} />
             </div>
           </button>
@@ -162,19 +162,19 @@ const Navbar: React.FC = () => {
             <a
               key={index}
               href={item.href}
-              className="flex justify-end items-center gap-4 text-zinc-400 hover:text-white hover:bg-zinc-800/50 p-1.5 rounded-2xl transition-all duration-300 relative group overflow-hidden"
+              className="flex justify-end md:justify-start items-center gap-4 text-zinc-400 hover:text-white hover:bg-zinc-800/50 p-1.5 rounded-2xl transition-all duration-300 relative group overflow-hidden"
               title={!isHovered && !isMobileSideExpanded ? t(item.translationKey) : undefined}
               onClick={(e) => { scrollToSection(e, item.href); setIsMobileSideExpanded(false); }}
             >              
               <span 
                 className={cn(
-                  "text-sm font-medium whitespace-nowrap z-10 transition-all duration-300",
-                  isSideExpanded ? "opacity-100 delay-100 relative" : "opacity-0 absolute right-10"
+                  "text-sm font-medium whitespace-nowrap z-10 transition-all duration-300 order-1 md:order-2",
+                  isSideExpanded ? "opacity-100 delay-100 relative" : "opacity-0 absolute right-10 md:left-10 md:right-auto"
                 )}
               >
                 {t(item.translationKey)}
               </span>
-              <div className="shrink-0 relative z-10">{item.icon}</div>
+              <div className="shrink-0 relative z-10 order-2 md:order-1">{item.icon}</div>
             </a>
           ))}
         </div>

@@ -1,61 +1,182 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll } from 'motion/react';
+import React, { useRef } from 'react';
+import { 
+  motion, 
+  useScroll, 
+  useMotionValue, 
+  useMotionTemplate, 
+  useAnimationFrame 
+} from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import { PROCESS_STEPS } from '../constants/data';
 
-function WarpBackground() {
-  const [Warp, setWarp] = useState<React.ComponentType<any> | null>(null);
+/**
+ * Helper component for the SVG grid pattern.
+ */
+const GridPattern = ({ offsetX, offsetY, size }: { offsetX: any; offsetY: any; size: number }) => {
+  return (
+    <svg className="w-full h-full">
+      <defs>
+        <motion.pattern
+          id="grid-pattern"
+          width={size}
+          height={size}
+          patternUnits="userSpaceOnUse"
+          x={offsetX}
+          y={offsetY}
+        >
+          <path
+            d={`M ${size} 0 L 0 0 0 ${size}`}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            className="text-muted-foreground" 
+          />
+        </motion.pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+    </svg>
+  );
+};
 
-  useEffect(() => {
-    let isMounted = true;
+const InfiniteGridBackground = ({ mouseX, mouseY }: { mouseX: any; mouseY: any }) => {
+  const gridSize = 40;
+  
+  // Grid offsets for infinite scroll animation
+  const gridOffsetX = useMotionValue(0);
+  const gridOffsetY = useMotionValue(0);
 
-    import('@paper-design/shaders-react').then((module) => {
-      if (isMounted) {
-        setWarp(() => module.Warp);
-      }
-    });
+  const speedX = 0.5; 
+  const speedY = 0.5;
 
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  useAnimationFrame(() => {
+    const currentX = gridOffsetX.get();
+    const currentY = gridOffsetY.get();
+    // Reset offset at pattern width to simulate infinity
+    gridOffsetX.set((currentX + speedX) % gridSize);
+    gridOffsetY.set((currentY + speedY) % gridSize);
+  });
 
-  if (!Warp) {
-    return null;
-  }
+  // Create a dynamic radial mask for the "flashlight" effect
+  const maskImage = useMotionTemplate`radial-gradient(350px circle at ${mouseX}px ${mouseY}px, black, transparent)`;
 
   return (
-    <Warp
-      style={{ height: '100%', width: '100%' }}
-      proportion={0.45}
-      softness={1}
-      distortion={0.25}
-      swirl={0.8}
-      swirlIterations={10}
-      shape="checks"
-      shapeScale={0.1}
-      scale={1}
-      rotation={0}
-      speed={1}
-      colors={['hsl(280, 90%, 15%)', 'hsl(300, 100%, 35%)', 'hsl(260, 80%, 25%)', 'hsl(320, 100%, 45%)']}
-    />
+    <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* Layer 1: Subtle background grid (always visible) */}
+      <div className="absolute inset-0 z-0 opacity-[0.05]">
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} size={gridSize} />
+      </div>
+
+      {/* Layer 2: Highlighted grid (revealed by mouse mask) */}
+      <motion.div 
+        className="absolute inset-0 z-0 opacity-80"
+        style={{ maskImage, WebkitMaskImage: maskImage }}
+      >
+        <GridPattern offsetX={gridOffsetX} offsetY={gridOffsetY} size={gridSize} />
+      </motion.div>
+
+      {/* Decorative Blur Spheres */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Top Section Blobs */}
+        <motion.div 
+          animate={{ 
+            x: [0, 30, 0],
+            y: [0, 20, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[-10%] top-[-10%] w-[50%] h-[40%] rounded-full bg-purple-600/8 blur-[120px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -20, 0],
+            y: [0, 40, 0]
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute left-[-5%] top-[5%] w-[30%] h-[30%] rounded-full bg-brand-primary/03 blur-[100px]" 
+        />
+
+        {/* Middle Section Blobs */}
+        <motion.div 
+          animate={{ 
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute right-[5%] top-[30%] w-[35%] h-[40%] rounded-full bg-indigo-600/10 blur-[130px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, 40, 0],
+            y: [0, -30, 0]
+          }}
+          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute left-[20%] top-[45%] w-[25%] h-[25%] rounded-full bg-purple-500/8 blur-[110px]" 
+        />
+
+        {/* Bottom Section Blobs */}
+        <motion.div 
+          animate={{ 
+            x: [0, -30, 0],
+            y: [0, 30, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute left-[-10%] bottom-[-10%] w-[50%] h-[40%] rounded-full bg-purple-900/12 blur-[140px]" 
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, 25, 0],
+            y: [0, -40, 0]
+          }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+          className="absolute right-[-5%] bottom-[5%] w-[35%] h-[35%] rounded-full bg-brand-primary/12 blur-[120px]" 
+        />
+      </div>
+    </div>
   );
-}
+};
 
 const ProcessSection: React.FC = () => {
   const { t } = useTranslation(['process', 'data']);
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
 
+  // Track mouse position for the flashlight effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const clientX = useRef(0);
+  const clientY = useRef(0);
+
+  const updateMousePosition = () => {
+    if (!sectionRef.current) return;
+    const { left, top } = sectionRef.current.getBoundingClientRect();
+    mouseX.set(clientX.current - left);
+    mouseY.set(clientY.current - top);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    clientX.current = e.clientX;
+    clientY.current = e.clientY;
+    updateMousePosition();
+  };
+
+  useAnimationFrame(() => {
+    updateMousePosition();
+  });
+
   return (
-    <section className="bg-zinc-800 text-white py-32 px-4 md:px-16 relative overflow-hidden">
-      {/* Warp Shader Background */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <WarpBackground />
-      </div>
+    <section 
+      ref={sectionRef}
+      onMouseMove={handleMouseMove}
+      className="bg-zinc-950 text-white py-32 px-4 md:px-16 relative overflow-hidden"
+    >
+      {/* Infinite Grid Background */}
+      <InfiniteGridBackground mouseX={mouseX} mouseY={mouseY} />
 
       <div className="max-w-7xl mx-auto relative z-10" ref={containerRef}>
         {/* Header Row */}
