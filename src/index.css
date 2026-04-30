@@ -64,6 +64,11 @@
   51% { transform: scaleY(1); transform-origin: bottom; }
 }
 
+@keyframes grid-flow {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

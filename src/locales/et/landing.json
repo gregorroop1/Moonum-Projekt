@@ -11,6 +11,12 @@
       "services": "Teenused",
       "pricing": "Hinnakiri"
     },
-    "cta": "Võta ühendust"
+    "cta": "Võta ühendust",
+    "imageAlt": "Moonum - Digitaalsed Elamused ja Tarkvara Arendus visuaal"
+  },
+  "seo": {
+    "title": "Moonum - Digitaalsed Elamused ja Tarkvara Arendus Eestis",
+    "description": "Moonum loob kaasahaaravaid ja tulemusele orienteeritud veebilehti ning tarkvaralahendusi Eestis. Tõsta oma digitaalne kohalolu uuele tasemele.",
+    "keywords": "veebiarendus eestis, tarkvaraarendus, digitaalsed elamused, moonum, eritarkvara, veebidisain"
   }
 }

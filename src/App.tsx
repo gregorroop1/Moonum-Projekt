@@ -15,6 +15,9 @@ import { useTranslation } from 'react-i18next';
 import MoonumLanding from './components/MoonumLanding';
 import Marquee from './components/Marquee';
 import Navbar from './components/Navbar';
+import { HelmetProvider } from 'react-helmet-async';
+import SEOMetadata from './components/SEOMetadata';
+import StructuredData from './components/StructuredData';
 
 const ServicesSection = lazy(() => import('./components/ServicesSection'));
 const PricingSection = lazy(() => import('./components/PricingSection'));
@@ -75,29 +78,32 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
-    document.title = i18n.language === 'et' ? 'Moonum - Digitaalsed Elamused' : 'Moonum - Digital Experiences';
   }, [i18n.language]);
 
   return (
-    <main className="relative bg-[#0a0a0a] min-h-screen">
-      <Navbar />
-      <MoonumLanding />
-      <div className="relative z-20">
-        <Marquee />
-        <DeferredSection id="services" fallback={<SectionFallback minHeight="min-h-[60vh]" />}>
-          <ServicesSection />
-        </DeferredSection>
-        <DeferredSection id="pricing" fallback={<SectionFallback minHeight="min-h-[65vh]" />}>
-          <PricingSection />
-        </DeferredSection>
-        <DeferredSection id="process" fallback={<SectionFallback minHeight="min-h-[70vh]" />}>
-          <ProcessSection />
-        </DeferredSection>
-        <DeferredSection id="contact" fallback={<SectionFallback minHeight="min-h-[55vh]" />}>
-          <ContactSection />
-        </DeferredSection>
-      </div>
-      <FooterSection />
-    </main>
+    <HelmetProvider>
+      <SEOMetadata />
+      <StructuredData />
+      <main className="relative bg-[#0a0a0a] min-h-screen">
+        <Navbar />
+        <MoonumLanding />
+        <div className="relative z-20">
+          <Marquee />
+          <DeferredSection id="services" fallback={<SectionFallback minHeight="min-h-[60vh]" />}>
+            <ServicesSection />
+          </DeferredSection>
+          <DeferredSection id="pricing" fallback={<SectionFallback minHeight="min-h-[65vh]" />}>
+            <PricingSection />
+          </DeferredSection>
+          <DeferredSection id="process" fallback={<SectionFallback minHeight="min-h-[70vh]" />}>
+            <ProcessSection />
+          </DeferredSection>
+          <DeferredSection id="contact" fallback={<SectionFallback minHeight="min-h-[55vh]" />}>
+            <ContactSection />
+          </DeferredSection>
+        </div>
+        <FooterSection />
+      </main>
+    </HelmetProvider>
   );
 }

@@ -11,6 +11,12 @@
       "services": "Services",
       "pricing": "Pricing"
     },
-    "cta": "Get in touch"
+    "cta": "Get in touch",
+    "imageAlt": "Moonum - Digital Experiences and Software Engineering visual"
+  },
+  "seo": {
+    "title": "Moonum - Digital Experiences & Software Engineering Estonia",
+    "description": "Moonum creates engaging, results-oriented web development and software engineering solutions in Estonia. Elevate your digital presence with our expert team.",
+    "keywords": "web development estonia, software engineering, digital experiences, moonum, custom software, responsive design"
   }
 }
