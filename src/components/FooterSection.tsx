@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { MENU_ITEMS, SITE_INFO } from '../constants/data';
 import { ArrowUpRight } from 'lucide-react';
 
-import { InstagramIcon, LinkedinIcon, TwitterIcon } from './icons';
+
 import PrivacyPolicyModal from './PrivacyPolicyModal';
 import { scrollToSection } from '@/lib/smoothScroll';
 
@@ -40,7 +40,7 @@ const FooterSection: React.FC = () => {
         </div>
 
         {/* Middle Section: Links & Socials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-zinc-800 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-zinc-800 py-12 px-6">
           {/* Navigation */}
           <div className="space-y-6 text-left">
             <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-500">{t('footer.navigation', { ns: 'common' })}</h3>
@@ -64,24 +64,14 @@ const FooterSection: React.FC = () => {
           <div className="space-y-6 text-left">
             <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-500">{t('footer.socials', { ns: 'common' })}</h3>
             <ul className="space-y-4">
-              <li>
-                <a href={SITE_INFO.social.instagram} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors inline-flex items-center gap-2">
-                  <InstagramIcon size={20} className="text-zinc-600" />
-                  Instagram
-                </a>
-              </li>
-              <li>
-                <a href={SITE_INFO.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors inline-flex items-center gap-2">
-                  <LinkedinIcon size={20} className="text-zinc-600" />
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href={SITE_INFO.social.twitter} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors inline-flex items-center gap-2">
-                  <TwitterIcon size={20} className="text-zinc-600" />
-                  Twitter
-                </a>
-              </li>
+              {SITE_INFO.social.map((social) => (
+                <li key={social.id}>
+                  <a href={social.url} target="_blank" rel="noopener noreferrer" className="text-sm md:text-base font-medium uppercase tracking-widest hover:text-zinc-400 transition-colors inline-flex items-center gap-2">
+                    <social.icon size={20} className="text-zinc-600" />
+                    {social.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

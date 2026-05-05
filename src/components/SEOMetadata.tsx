@@ -18,8 +18,7 @@ const SEOMetadata: React.FC<SEOMetadataProps> = ({
   image = '/Alpaca_blizidega.webp', // Default hero image
   url = 'https://moonum.ee', // Replace with actual domain
 }) => {
-  const { t, i18n } = useTranslation('landing');
-  const currentLang = i18n.language;
+  const { t } = useTranslation('landing');
 
   const seoTitle = title || t('seo.title');
   const seoDescription = description || t('seo.description');

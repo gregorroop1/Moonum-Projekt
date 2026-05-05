@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CATEGORIES, PLANS_BY_CATEGORY, Category } from '../constants/data';
 import { scrollToSection } from '@/lib/smoothScroll';
@@ -8,6 +8,17 @@ const PricingSection: React.FC = () => {
   const { t } = useTranslation(['pricing', 'data']);
   const [activeCategory, setActiveCategory] = useState<Category>(CATEGORIES[0]);
 
+  useEffect(() => {
+    const handleSelectCategory = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      if (CATEGORIES.includes(customEvent.detail as Category)) {
+        setActiveCategory(customEvent.detail as Category);
+      }
+    };
+    window.addEventListener('select-category', handleSelectCategory);
+    return () => window.removeEventListener('select-category', handleSelectCategory);
+  }, []);
+
   return (
     <section className="bg-white text-black py-18 px-4 md:px-16 relative overflow-hidden">
       {/* Decorative center icon */}
@@ -16,7 +27,7 @@ const PricingSection: React.FC = () => {
           {[...Array(24)].map((_, i) => (
             <div 
               key={i} 
-              className="absolute top-1/2 left-1/2 w-[1px] h-6 bg-zinc-300 origin-bottom"
+              className="absolute top-1/2 left-1/2 w-px h-6 bg-zinc-300 origin-bottom"
               style={{ transform: `translate(-50%, -100%) rotate(${i * 15}deg)` }}
             ></div>
           ))}
@@ -38,7 +49,7 @@ const PricingSection: React.FC = () => {
           <div className="w-24 h-24 rounded-full border border-black relative overflow-hidden flex items-center justify-center p-2">
             <div className="w-full h-full space-y-1 flex flex-col justify-center">
                {[...Array(10)].map((_, i) => (
-                 <div key={i} className="w-[150%] h-[1px] bg-black -rotate-45 -translate-x-4"></div>
+                 <div key={i} className="w-[150%] h-px bg-black -rotate-45 -translate-x-4"></div>
                ))}
             </div>
           </div>
@@ -49,7 +60,7 @@ const PricingSection: React.FC = () => {
       <div className="max-w-7xl mx-auto mb-24 px-4 overflow-hidden">
         <div className="flex flex-nowrap justify-center items-center">
           {/* Static Rail Segment */}
-          <div className="w-6 md:w-12 lg:w-24 h-[1px] bg-zinc-200" />
+          <div className="w-6 md:w-12 lg:w-24 h-px bg-zinc-200" />
 
           {CATEGORIES.map((category) => {
             const isActive = activeCategory === category;
@@ -75,7 +86,7 @@ const PricingSection: React.FC = () => {
                 </button>
                 
                 {/* Static Rail Segment */}
-                <div className="w-6 md:w-12 lg:w-24 h-[1px] bg-zinc-300" />
+                <div className="w-6 md:w-12 lg:w-24 h-px bg-zinc-300" />
               </React.Fragment>
             );
           })}
@@ -107,7 +118,7 @@ const PricingSection: React.FC = () => {
               {/* Left: Number + Content */}
               <div className="flex items-start gap-6 md:gap-8 w-full md:w-auto md:flex-1">
                 {/* Number Box */}
-                <div className={`w-11 h-11 flex-shrink-0 flex items-center justify-center font-black text-sm ${
+                <div className={`w-11 h-11 shrink-0 flex items-center justify-center font-black text-sm ${
                   plan.isDark ? 'bg-zinc-800' : 'bg-black text-white'
                 }`}>
                   {String(index + 1).padStart(2, '0')}
@@ -142,8 +153,8 @@ const PricingSection: React.FC = () => {
               </div>
 
               {/* Right: CTA */}
-              <div className="flex items-center gap-6 w-full md:w-auto justify-end flex-shrink-0">
-                <div className={`h-8 w-[1px] hidden md:block ${plan.isDark ? 'bg-zinc-700' : 'bg-zinc-200'}`}></div>
+              <div className="flex items-center gap-6 w-full md:w-auto justify-end shrink-0">
+                <div className={`h-8 w-px hidden md:block ${plan.isDark ? 'bg-zinc-700' : 'bg-zinc-200'}`}></div>
                 <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] whitespace-nowrap flex items-center gap-2">
                   {t('pricing.meta', { ns: 'data' })}
                   <svg

@@ -215,13 +215,13 @@ const ProcessSection: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter max-w-5xl uppercase">
             {t('header', { ns: 'process' })}
           </h2>
-          <div className="w-24 h-[1px] bg-purple-500/50"></div>
+          <div className="w-24 h-px bg-purple-500/50"></div>
         </div>
 
         {/* Process Steps */}
         <div className="relative">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[1px] h-full bg-zinc-800 hidden lg:block overflow-hidden">
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-px h-full bg-zinc-800 hidden lg:block overflow-hidden">
              <motion.div 
                className="w-full bg-purple-500 origin-top will-change-transform"
                style={{ scaleY: scrollYProgress, height: "100%" }}

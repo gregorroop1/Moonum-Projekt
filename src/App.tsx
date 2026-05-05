@@ -84,7 +84,7 @@ export default function App() {
     <HelmetProvider>
       <SEOMetadata />
       <StructuredData />
-      <main className="relative bg-[#0a0a0a] min-h-screen">
+      <main className="relative bg-brand-dark min-h-screen">
         <Navbar />
         <MoonumLanding />
         <div className="relative z-20">

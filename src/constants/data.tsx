@@ -4,7 +4,7 @@ export const MENU_ITEMS = [
   { translationKey: 'data:menu.home', href: '#', icon: <Home size={20} strokeWidth={1.5} /> },
   { translationKey: 'data:menu.services', href: '#services', icon: <Briefcase size={20} strokeWidth={1.5} /> },
   { translationKey: 'data:menu.pricing', href: '#pricing', icon: <Tag size={20} strokeWidth={1.5} /> },
-  { translationKey: 'data:menu.works', href: '#works', icon: <Grid size={20} strokeWidth={1.5} /> },
+  // { translationKey: 'data:menu.works', href: '#works', icon: <Grid size={20} strokeWidth={1.5} /> },
   { translationKey: 'data:menu.contact', href: '#contact', icon: <Mail size={20} strokeWidth={1.5} /> },
 ];
 
@@ -51,14 +51,16 @@ export const SERVICES_LIST = [
   'wordpress'
 ];
 
+import { InstagramIcon, LinkedinIcon, TwitterIcon, FacebookIcon, TiktokIcon } from '../components/icons';
+
 export const SITE_INFO = {
-  email: 'hello@moonum.com',
-  phone: '+372 5555 5555',
-  social: {
-    facebook: 'https://facebook.com/moonum',
-    tiktok: 'https://tiktok.com/@moonum',
-    instagram: 'https://instagram.com/moonum',
-    linkedin: 'https://linkedin.com/company/moonum',
-    twitter: 'https://twitter.com/moonum'
-  }
+  email: 'moonumagency@gmail.com',
+  phone: '+372 5665 5288',
+  social: [
+    { id: 'facebook', name: 'Facebook', url: 'https://www.facebook.com/100093375521992', icon: FacebookIcon },
+    // { id: 'tiktok', name: 'TikTok', url: 'https://tiktok.com/@moonum', icon: TiktokIcon },
+    // { id: 'instagram', name: 'Instagram', url: 'https://instagram.com/moonum', icon: InstagramIcon },
+    // { id: 'linkedin', name: 'LinkedIn', url: 'https://linkedin.com/company/moonum', icon: LinkedinIcon },
+    // { id: 'twitter', name: 'Twitter', url: 'https://twitter.com/moonum', icon: TwitterIcon }
+  ]
 };

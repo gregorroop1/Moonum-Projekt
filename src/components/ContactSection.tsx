@@ -154,13 +154,6 @@ const ContactSection: React.FC = () => {
                 {t('form.submit', { ns: 'contact' })}
                 <Zap className="fill-current group-hover:animate-pulse" size={18} />
               </button>
-              
-              {/* Lightning Bolt Sketch (SVG) */}
-              <div className="absolute -top-12 -right-8 pointer-events-none hidden md:block">
-                 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                   <path d="M10 30L30 5M30 5L20 25M20 25L50 55M50 55L40 35" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                 </svg>
-              </div>
             </div>
             <p className="mt-6 text-zinc-400 text-sm italic font-medium">
               {t('form.footer', { ns: 'contact' })}

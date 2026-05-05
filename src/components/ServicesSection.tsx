@@ -11,7 +11,7 @@ import {
   RotateCcw
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { FacebookIcon, TiktokIcon, InstagramIcon } from './icons';
+
 import { SITE_INFO } from '../constants/data';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../../components/ui/button';
@@ -47,7 +47,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       layout
       className={cn(
         "perspective-1000 relative cursor-pointer group transition-all duration-500 w-full",
-        "aspect-[4/5] md:aspect-square",
+        "aspect-4/5 md:aspect-square",
         isFlipped ? "md:flex-[1.5] z-50" : "md:flex-1 z-0"
       )}
       onClick={onToggle}
@@ -92,7 +92,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               <RotateCcw size={16} className="text-zinc-400" />
             </div>
             
-            <div className="overflow-y-auto flex-grow pr-2 custom-scrollbar">
+            <div className="overflow-y-auto grow pr-2 custom-scrollbar">
               <p className="text-[11px] md:text-xs leading-relaxed text-zinc-400 mb-6">
                 {t(`cards.info.${id}.description`)}
               </p>
@@ -109,14 +109,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
             <div className="mt-4 pt-4 border-t border-zinc-200/10 flex justify-between items-center shrink-0">
               <a 
-                href="#contact" 
-                onClick={(e) => { e.stopPropagation(); scrollToSection(e, '#contact'); }}
+                href="#pricing" 
+                onClick={(e) => { 
+                  e.stopPropagation(); 
+                  scrollToSection(e, '#pricing');
+                  window.dispatchEvent(new CustomEvent('select-category', { detail: id }));
+                }}
                 className={cn(
                   buttonVariants({ variant: isDark ? "polygon" : "polygon2" }), 
                   "text-[9px] px-6 py-3"
                 )}
               >
-                {t('cards.contactUs')}
+                {t('cards.viewPlans')}
               </a>
             </div>
           </div>
@@ -146,19 +150,15 @@ const ServicesSection: React.FC = () => {
       {/* Top Meta Bar */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-zinc-100 pb-6">
         <div className="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
-          <a href={SITE_INFO.social.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
-            <FacebookIcon size={14} /> {t('social.facebook')}
-          </a>
-          <a href={SITE_INFO.social.tiktok} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
-            <TiktokIcon size={14} /> {t('social.tiktok')}
-          </a>
-          <a href={SITE_INFO.social.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
-            <InstagramIcon size={14} /> {t('social.instagram')}
-          </a>
+          {SITE_INFO.social.slice(0, 3).map((social) => (
+            <a key={social.id} href={social.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-50 transition-opacity">
+              <social.icon size={14} /> {social.name}
+            </a>
+          ))}
         </div>
         
-        <div className="flex-grow mx-8 hidden md:block">
-          <div className="h-[1px] bg-zinc-200 w-full"></div>
+        <div className="grow mx-8 hidden md:block">
+          <div className="h-px bg-zinc-200 w-full"></div>
         </div>
 
         <a href={`mailto:${SITE_INFO.email}`} className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] font-bold hover:opacity-50 transition-opacity">
@@ -189,11 +189,11 @@ const ServicesSection: React.FC = () => {
       <div className="relative flex flex-col md:flex-row gap-6 mt-8 pl-0 lg:pl-16 items-stretch md:items-start md:min-h-[430px]">
         
         {/* Scroll Bar Sidebar (Left) */}
-        <div className="absolute left-[-3rem] top-0 hidden xl:flex flex-col items-center gap-6">
+        <div className="absolute -left-12 top-0 hidden xl:flex flex-col items-center gap-6">
             <span className="-rotate-90 whitespace-nowrap text-[8px] uppercase tracking-[0.3em] font-bold text-zinc-400 origin-center translate-y-6">
               {t('sidebar')}
             </span>
-            <div className="w-[1px] h-24 bg-zinc-200"></div>
+            <div className="w-px h-24 bg-zinc-200"></div>
             <a href="#pricing" onClick={(e) => scrollToSection(e, '#pricing')} className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center bg-black text-white cursor-pointer hover:bg-zinc-800 transition-colors shadow-xl">
               <ArrowDown size={18} />
             </a>
