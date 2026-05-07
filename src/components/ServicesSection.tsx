@@ -45,6 +45,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   return (
     <motion.div 
       layout
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
       className={cn(
         "perspective-1000 relative cursor-pointer group transition-all duration-500 w-full",
         "aspect-4/5 md:aspect-square",
@@ -168,7 +172,13 @@ const ServicesSection: React.FC = () => {
 
       {/* Main Content Area */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">
-        <div className="flex flex-col items-start">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-start"
+        >
            <div className="flex items-center gap-4 mb-2">
              <div className="w-8 h-[2px] bg-black"></div>
              <span className="text-[10px] uppercase tracking-[0.2em] font-black">{t('header.tag')}</span>
@@ -176,13 +186,19 @@ const ServicesSection: React.FC = () => {
            <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter uppercase">
              <Trans i18nKey="header.title" ns="services" components={{ br: <br /> }} />
            </h2>
-        </div>
+        </motion.div>
 
-        <div className="max-w-sm lg:pt-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="max-w-sm lg:pt-8"
+        >
           <p className="text-zinc-500 text-sm leading-relaxed text-left lg:text-left">
             {t('header.description')}
           </p>
-        </div>
+        </motion.div>
       </div>
 
       {/* Services Grid/Flex */}

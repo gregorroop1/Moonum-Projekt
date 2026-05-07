@@ -12,12 +12,12 @@
     "marketing": "TURUNDUS"
   },
   "pricing": {
-    "meta": "KÜSI HINDA",
+    "meta": "SOOVIN INFOT",
     "plans": {
-      "01": "Lihtne veebileht",
-      "02": "Keerulisem Veebileht",
+      "01": "Lihtne veeb",
+      "02": "Keerulisem veebileht",
       "03": "Väljakutse",
-      "04": "E-pood",
+      "04": "Epood",
       "04-1": "SEO",
       "04-2": "Hooldused",
       "05": "Klientide haldamise tarkvara",
@@ -27,17 +27,30 @@
       "07": "Sotsiaalmeedia haldamine"
     },
     "descriptions": {
-      "01": "Puhas ja professionaalne veebileht, mis sobib ideaalselt väikeettevõtetele ja isiklikele brändidele veebis kohaloleku loomiseks.",
-      "02": "Funktsioonirikas veebileht kohandatud funktsionaalsuse, animatsioonide ja täiustatud kasutajasuhtlusega vastavalt sinu visioonile.",
-      "03": "On midagi ainulaadset meeles? Meile meeldivad ambitsioonikad projektid, mis ületavad loovuse ja tehnilisi piire.",
-      "04": "Täisfunktsionaalne e-pood maksete integreerimise, laohalduse ja konversioonile optimeeritud disainiga.",
-      "04-1": "Otsingumootori optimeerimine, et suurendada sinu nähtavust ja suunata orgaanilist liiklust sinu veebilehele.",
-      "04-2": "Pidev veebilehe uuendamine, turvapaigad, jõudluse jälgimine ja sisu haldamine.",
+      "01": "Lihtne veeb ei vaja selgitust, ta on ilus, puhas ja lihtne. 1-3 lehekülge, kerge SEO tõuge, loogiliselt ülesehitatud ja nii ongi!",
+      "02": "Veidi mahukam projekt, huvitavad animatsioonid, rohkem kui kolm lehekülge. Turu- ja konkurentide analüüs jne…",
+      "03": "Tahad teistest peajagu erineda näiteks 3D animatsioonide ja eriti interaktiivse veebilehega mis paneb teisi mõtlema nagu “Vauu, see on lahe!” Siis esita meile väljakutse",
+      "04": "Oled alustav või juba toimiv ettevõte? Suur või väike? Vahet pole, meie leiame just sulle parima võimaliku lahenduse, hoides sinu püsikulud madalad ja konversioonid kõrged.",
+      "04-1": "Mis seal salata, kes meist ei taha olla alati esimeste seas? See kehtib ka sinu veebilehele ja meie saame teda treenida, et ka tema jõuaks esimeste hulka!",
+      "04-2": "Hoiame silma peal sinuveebilehel, vajadusel teeme uuendusi, et hoida sinuveebileht turvaline, puhastame vahemälu, jälgime jõudlust ja haldame ka sisu.",
       "05": "Kohandatud CRM lahendused klientide, müügitoru ja oluliste ärisuhete tõhusaks haldamiseks.",
       "05-1": "Korduvate ülesannete ja töövoogude sujuvamaks muutmine intelligentsete automatiseerimislahendustega.",
       "05-2": "Ühenda oma olemasolevad tööriistad ja platvormid sujuvaks andmevooluks kogu ettevõttes.",
       "06": "Sihitud reklaamikampaaniad Google'is, Metas ja teistel platvormidel investeeringutasuvuse maksimeerimiseks.",
       "07": "Järjepidev ja kaasahaarav sotsiaalmeedia kohalolek strateegia, sisuloomise ja kogukonna haldamisega."
+    },
+    "prices": {
+      "01": "Al. 500€",
+      "02": "Al. 850€",
+      "03": "Al. 2000€",
+      "04": "Al. 1200€",
+      "04-1": "Al. 300€/kuu",
+      "04-2": "45€/h",
+      "05": "Al. 1500€",
+      "05-1": "Al. 1000€",
+      "05-2": "Al. 500€",
+      "06": "Al. 400€/kuu",
+      "07": "Al. 350€/kuu"
     },
     "features": {
       "01": ["Kohanduv", "Kiire", "SEO-valmis"],

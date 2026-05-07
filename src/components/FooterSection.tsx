@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MENU_ITEMS, SITE_INFO } from '../constants/data';
 import { ArrowUpRight } from 'lucide-react';
+import { Logo } from './Logo';
+import { motion } from 'framer-motion';
 
 
 import PrivacyPolicyModal from './PrivacyPolicyModal';
@@ -17,10 +19,16 @@ const FooterSection: React.FC = () => {
     <footer className="bg-black text-white pt-24 pb-8 px-4 md:px-16 border-t border-zinc-800">
       <div className="max-w-6xl mx-auto flex flex-col">
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-10"
+        >
           <div>
-            <h2 className="text-5xl md:text-8xl font-display font-black tracking-tighter uppercase leading-none mb-4">
-              {t('logo', { ns: 'common' })}
+            <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase leading-none mb-4">
+              <Logo />
             </h2>
             <p className="text-zinc-400 text-sm md:text-base max-w-sm">
               {t('footer.description', { ns: 'common' })}
@@ -37,10 +45,16 @@ const FooterSection: React.FC = () => {
               <ArrowUpRight className="w-8 h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </a>
           </div>
-        </div>
+        </motion.div>
 
         {/* Middle Section: Links & Socials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-zinc-800 py-12 px-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-zinc-800 py-12 px-6"
+        >
           {/* Navigation */}
           <div className="space-y-6 text-left">
             <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-500">{t('footer.navigation', { ns: 'common' })}</h3>
@@ -90,11 +104,11 @@ const FooterSection: React.FC = () => {
               </li>
             </ul>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-zinc-800 text-zinc-500 text-xs font-bold uppercase tracking-widest">
-          <p>© {currentYear} {t('logo', { ns: 'common' })}. {t('footer.rights', { ns: 'common' })}</p>
+          <p className="flex items-center gap-1">© {currentYear} <Logo />. {t('footer.rights', { ns: 'common' })}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <button onClick={() => setIsPrivacyOpen(true)} className="hover:text-zinc-300 transition-colors uppercase font-bold tracking-widest">{t('footer.privacy', { ns: 'common' })}</button>
           </div>

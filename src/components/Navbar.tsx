@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
+import { Logo } from './Logo';
 import { MENU_ITEMS } from '../constants/data';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../../components/ui/button';
@@ -53,9 +54,8 @@ const Navbar: React.FC = () => {
       >
         <div className="flex items-center gap-12">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-             <span className="text-xl font-bold tracking-[0.2em] text-white font-sans">{t('logo')}</span>
-             <div className="w-1.5 h-1.5 bg-[#ff3c00] rounded-full mb-1 shadow-[0_0_10px_#ff3c00]"></div>
+          <div className="flex items-center">
+             <Logo className="text-xl font-bold tracking-[0.2em] text-white" />
           </div>
           
           {/* Menüü lingid (Desktop) */}
@@ -70,18 +70,19 @@ const Navbar: React.FC = () => {
                 {t(item.translationKey)}
               </a>
             ))}
-            <button 
-              onClick={() => i18n.changeLanguage(i18n.language === 'et' ? 'en' : 'et')}
-              className="text-zinc-400 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors flex items-center gap-1"
-            >
-              <Globe size={12} /> {i18n.language === 'et' ? 'EN' : 'ET'}
-            </button>
           </div>
         </div>
 
-        {/* CTA Nupp */}
-        <div className="hidden md:block">
-           <a 
+        <div className="hidden md:flex gap-6">
+          <button 
+            onClick={() => i18n.changeLanguage(i18n.language === 'et' ? 'en' : 'et')}
+            className="text-zinc-400 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors flex items-center gap-1"
+          >
+            <Globe size={12} /> {i18n.language === 'et' ? 'EN' : 'ET'}
+          </button>
+          
+          {/* CTA Nupp */}
+          <a 
              href="#contact"
              onClick={(e) => scrollToSection(e, '#contact')}
              className={cn(buttonVariants({ variant: "polygon" }), "px-8 py-5 text-[10px]")}

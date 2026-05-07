@@ -36,7 +36,13 @@ const PricingSection: React.FC = () => {
       </div>
 
       {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-14 relative">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-center max-w-2xl mx-auto mb-14 relative"
+      >
         <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6 relative z-10">
           {t('header.title', { ns: 'pricing' })}
         </h2>
@@ -54,10 +60,16 @@ const PricingSection: React.FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Category Tabs */}
-      <div className="max-w-7xl mx-auto mb-24 px-4 overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="max-w-7xl mx-auto mb-24 px-4 overflow-hidden"
+      >
         <div className="flex flex-nowrap justify-center items-center">
           {/* Static Rail Segment */}
           <div className="w-6 md:w-12 lg:w-24 h-px bg-zinc-200" />
@@ -91,17 +103,20 @@ const PricingSection: React.FC = () => {
             );
           })}
         </div>
-      </div>
+      </motion.div>
 
       {/* Cards Grid */}
       {/* Pricing Rows */}
       <div className="max-w-6xl mx-auto">
         <div
           key={activeCategory}
-          className="space-y-4 animate-[fadeInUp_0.35s_ease-out]"
+          className="space-y-4"
         >
           {PLANS_BY_CATEGORY[activeCategory].map((plan, index) => (
-            <a 
+            <motion.a 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
               href="#contact"
               onClick={(e) => {
                 scrollToSection(e, '#contact');
@@ -126,8 +141,14 @@ const PricingSection: React.FC = () => {
                 
                 {/* Title + Description + Features */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-lg md:text-xl font-black uppercase tracking-tight leading-tight">
-                    {t(`pricing.plans.${plan.id}`, { ns: 'data' })}
+                  <h3 className="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-3 text-lg md:text-xl font-black uppercase tracking-tight leading-tight">
+                    <span className={plan.isDark ? 'text-white' : 'text-black'}>
+                      {t(`pricing.plans.${plan.id}`, { ns: 'data' })}
+                    </span>
+                    <span className={`hidden md:inline-block font-normal ${plan.isDark ? 'text-zinc-600' : 'text-zinc-300'}`}>/</span>
+                    <span className={plan.isDark ? 'text-zinc-300' : 'text-zinc-500'}>
+                      {t(`pricing.prices.${plan.id}`, { ns: 'data' })}
+                    </span>
                   </h3>
                   <p className={`text-xs leading-relaxed mt-1.5 max-w-lg ${
                     plan.isDark ? 'text-zinc-400' : 'text-zinc-500'
@@ -168,7 +189,7 @@ const PricingSection: React.FC = () => {
                   </svg>
                 </span>
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

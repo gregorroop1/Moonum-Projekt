@@ -211,12 +211,18 @@ const ProcessSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative z-10" ref={containerRef}>
         {/* Header Row */}
-        <div className="flex flex-col items-center text-center gap-12 mb-32">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center gap-12 mb-32"
+        >
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter max-w-5xl uppercase">
             {t('header', { ns: 'process' })}
           </h2>
           <div className="w-24 h-px bg-purple-500/50"></div>
-        </div>
+        </motion.div>
 
         {/* Process Steps */}
         <div className="relative">

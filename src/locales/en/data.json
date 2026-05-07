@@ -27,17 +27,30 @@
       "07": "Social Media Management"
     },
     "descriptions": {
-      "01": "A clean, professional website perfect for small businesses and personal brands looking to establish an online presence.",
-      "02": "Feature-rich websites with custom functionality, animations, and advanced user interactions tailored to your vision.",
-      "03": "Have something unique in mind? We love ambitious projects that push creative and technical boundaries.",
-      "04": "Full-featured online stores with payment integration, inventory management, and conversion-optimized design.",
-      "04-1": "Search engine optimization to boost your visibility and drive organic traffic to your website.",
-      "04-2": "Ongoing website updates, security patches, performance monitoring, and content management.",
+      "01": "A simple web needs no explanation; it is beautiful, clean, and simple. 1-3 pages, a light SEO boost, logically structured, and that's it!",
+      "02": "A slightly larger project, interesting animations, more than three pages. Market and competitor analysis, etc...",
+      "03": "Want to stand out head and shoulders above the rest with, for example, 3D animations and an especially interactive website that makes others think “Wow, this is cool!”? Then give us a challenge.",
+      "04": "Are you a starting or already functioning company? Large or small? It doesn't matter, we will find the best possible solution just for you, keeping your fixed costs low and conversions high.",
+      "04-1": "What can we say, who among us doesn't want to always be among the first? This also applies to your website, and we can train it so that it too reaches the top!",
+      "04-2": "We keep an eye on your website, make updates when necessary to keep your website secure, clear the cache, monitor performance, and also manage content.",
       "05": "Custom CRM solutions to manage your customers, sales pipeline, and key business relationships effectively.",
       "05-1": "Streamline repetitive tasks and workflows with intelligent automation solutions built for your needs.",
       "05-2": "Connect your existing tools and platforms for seamless data flow across your entire business.",
       "06": "Targeted advertising campaigns across Google, Meta, and other platforms to maximize your return on investment.",
       "07": "Consistent, engaging social media presence with strategy, content creation, and community management."
+    },
+    "prices": {
+      "01": "From 500€",
+      "02": "From 850€",
+      "03": "From 2000€",
+      "04": "From 1200€",
+      "04-1": "From 300€/mo",
+      "04-2": "45€/h",
+      "05": "From 1500€",
+      "05-1": "From 1000€",
+      "05-2": "From 500€",
+      "06": "From 400€/mo",
+      "07": "From 350€/mo"
     },
     "features": {
       "01": ["Responsive", "Fast", "SEO-Ready"],
