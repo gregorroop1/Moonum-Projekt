@@ -18,6 +18,7 @@ import Navbar from './components/Navbar';
 import { HelmetProvider } from 'react-helmet-async';
 import SEOMetadata from './components/SEOMetadata';
 import StructuredData from './components/StructuredData';
+import CookieConsent from './components/CookieConsent';
 
 const ServicesSection = lazy(() => import('./components/ServicesSection'));
 const PricingSection = lazy(() => import('./components/PricingSection'));
@@ -103,6 +104,7 @@ export default function App() {
           </DeferredSection>
         </div>
         <FooterSection />
+        <CookieConsent />
       </main>
     </HelmetProvider>
   );

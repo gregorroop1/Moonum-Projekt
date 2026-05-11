@@ -44,5 +44,12 @@
         "content": "Võime seda privaatsusteatist aeg-ajalt uuendada. Uuendatud versiooni tähistab uuendatud \"Muudetud\" kuupäev ja uuendatud versioon jõustub niipea, kui see on kättesaadav."
       }
     }
+  },
+  "cookieConsent": {
+    "title": "Kasutame küpsiseid",
+    "message": "Kasutame küpsiseid ja sarnaseid tehnoloogiaid sisu isikupärastamiseks, reklaamide tulemuslikkuse mõõtmiseks ja parema kasutuskogemuse pakkumiseks. Klõpsates \"Nõustun\", annate nõusoleku küpsiste kasutamiseks.",
+    "accept": "Nõustun",
+    "decline": "Keeldun",
+    "close": "Sulge"
   }
 }

@@ -44,5 +44,12 @@
         "content": "We may update this privacy notice from time to time. The updated version will be indicated by an updated \"Revised\" date and the updated version will be effective as soon as it is accessible."
       }
     }
+  },
+  "cookieConsent": {
+    "title": "We use cookies",
+    "message": "We use cookies and similar technologies to help personalise content, measure ads performance, and provide a better experience. By clicking \"Accept\", you consent to the use of cookies.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "close": "Close"
   }
 }
