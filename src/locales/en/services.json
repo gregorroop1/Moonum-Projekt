@@ -7,8 +7,8 @@
   },
   "header": {
     "tag": "services",
-    "title": "What we<br />build",
-    "description": "Business websites, internal tools, and integrations — designed clearly and built to last. We work with modern frameworks and care about performance, structure, and maintainability."
+    "title": "What do we<br />Offer?",
+    "description": "We create visually striking and logically structured web solutions that tell the unique story of your brand. Our web development is based on a deep understanding of UI/UX design and user experience."
   },
   "sidebar": "SCROLL DOWN",
   "cards": {
@@ -16,31 +16,31 @@
     "websites": "WEBSITES",
     "marketing": "MARKETING",
     "readMore": "READ MORE",
-    "contactUs": "Get in touch",
-    "viewPlans": "See pricing",
+    "contactUs": "Contact Us",
+    "viewPlans": "View Packages",
     "info": {
       "software": {
-        "title": "Custom Software",
-        "description": "Internal tools, booking systems, CRM setups, and automation — built around how your business actually works. No unnecessary complexity.",
-        "features": ["Booking Systems", "CRM Integration", "Automation", "API Development"]
+        "title": "Custom Software Development",
+        "description": "We build scalable, high-performance software solutions tailored to your specific business needs. From complex enterprise systems to innovative startups.",
+        "features": ["Cloud Solutions", "API Integration", "Database Design", "Security Audits"]
       },
       "websites": {
-        "title": "Business Websites",
-        "description": "Fast, well-structured websites built with React and Next.js. We handle design, development, and SEO so your site performs from day one.",
-        "features": ["React & Next.js", "Headless CMS", "Performance", "SEO"]
+        "title": "Premium Website Design",
+        "description": "Stunning, high-converting websites built with modern technology. We focus on speed, accessibility, and unique visual storytelling.",
+        "features": ["React & Next.js", "Headless CMS", "Performance Optimization", "SEO Strategy"]
       },
       "marketing": {
-        "title": "Digital Marketing",
-        "description": "Straightforward marketing support — ad campaigns, social media, and content strategy. We focus on results you can measure.",
-        "features": ["Ad Campaigns", "Content Strategy", "Social Media", "Analytics"]
+        "title": "Strategic Digital Marketing",
+        "description": "Data-driven marketing strategies that amplify your brand's reach and drive meaningful engagement with your target audience.",
+        "features": ["Growth Strategy", "Content Marketing", "Social Ads", "Conversion Analysis"]
       }
     }
   },
   "marquee": [
     "WEB DESIGN",
+    "APP DESIGN",
     "DEVELOPMENT",
-    "AUTOMATION",
-    "INTEGRATIONS",
+    "WEB FLOW",
     "BRANDING"
   ]
 }

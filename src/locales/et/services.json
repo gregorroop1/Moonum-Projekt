@@ -7,8 +7,8 @@
   },
   "header": {
     "tag": "teenused",
-    "title": "Mida me<br />ehitame",
-    "description": "Äri veebilehed, sisemised tööriistad ja integratsioonid — selgelt disainitud ja ehitatud kestma. Kasutame kaasaegseid raamistikke ning hoolime jõudlusest, struktuurist ja hooldatavusest."
+    "title": "Mida me teile<br />Pakume?",
+    "description": "Loome visuaalselt silmapaistvaid ja loogilise ülesehitusega veebilahendusi, mis räägivad teie brändi unikaalset lugu. Meie veebiarendus põhineb sügaval arusaamal UI/UX disainist ja kasutajakogemusest."
   },
   "sidebar": "KERI ALLA",
   "cards": {
@@ -16,31 +16,31 @@
     "websites": "VEEBILEHED",
     "marketing": "TURUNDUS",
     "readMore": "LOE EDASI",
-    "contactUs": "Võta ühendust",
-    "viewPlans": "Vaata hinnakirja",
+    "contactUs": "Võta Ühendust",
+    "viewPlans": "Vaata Pakette",
     "info": {
       "software": {
-        "title": "Eritarkvara",
-        "description": "Sisemised tööriistad, broneerimissüsteemid, CRM seadistused ja automatiseerimine — ehitatud sinu äri tegeliku töövoo ümber. Ilma üleliigse keerukuseta.",
-        "features": ["Broneerimissüsteemid", "CRM integratsioon", "Automatiseerimine", "API arendus"]
+        "title": "Eritarkvara Arendus",
+        "description": "Arendame skaleeritavaid ja suure jõudlusega tarkvaralahendusi vastavalt teie ärivajadustele. Alates keerulistest infosüsteemidest kuni idufirmadeni.",
+        "features": ["Pilvelahendused", "API Integratsioonid", "Andmebaasi Disain", "Turvaauditid"]
       },
       "websites": {
-        "title": "Äri veebilehed",
-        "description": "Kiired ja hästi struktureeritud veebilehed, ehitatud Reacti ja Next.js-iga. Tegeleme disaini, arenduse ja SEO-ga, et sinu leht töötaks esimesest päevast.",
-        "features": ["React & Next.js", "Haldusliidesed", "Jõudlus", "SEO"]
+        "title": "Premium Veebidisain",
+        "description": "Visuaalselt kütkestavad ja kõrge konversiooniga veebilehed. Keskendume kiirusele, ligipääsetavusele ja unikaalsele loojutustusele.",
+        "features": ["React & Next.js", "Haldusliidesed", "Jõudluse Optimeerimine", "SEO Strateegia"]
       },
       "marketing": {
-        "title": "Digiturundus",
-        "description": "Otsekohene turundusabi — reklaamikampaaniad, sotsiaalmeedia ja sisustrateegia. Keskendume tulemustele, mida saab mõõta.",
-        "features": ["Reklaamikampaaniad", "Sisustrateegia", "Sotsiaalmeedia", "Analüütika"]
+        "title": "Strateegiline Turundus",
+        "description": "Andmepõhised turundusstrateegiad, mis laiendavad teie brändi ulatust ja suurendavad kaasamist teie sihtrühmaga.",
+        "features": ["Kasvustrateegia", "Sisuturundus", "Sotsiaalmeedia Reklaam", "Konversiooni Analüüs"]
       }
     }
   },
   "marquee": [
     "VEEBIDISAIN",
+    "ÄPI DISAIN",
     "ARENDUS",
-    "AUTOMATISEERIMINE",
-    "INTEGRATSIOONID",
+    "WEB FLOW",
     "BRÄNDING"
   ]
 }

@@ -1,30 +1,30 @@
 {
   "header": {
-    "title1": "Let's talk.",
-    "title2": "Tell us about your project",
-    "description": "Have a project in mind? We'd like to hear about it."
+    "title1": "Say Hello!",
+    "title2": "and tell me about your idea",
+    "description": "Have a great idea? Get in touch and let's talk."
   },
   "form": {
     "name": {
       "label": "Name:*",
-      "placeholder": "Your name"
+      "placeholder": "Hello..."
     },
     "email": {
       "label": "Email:*",
-      "placeholder": "Where we can reach you"
+      "placeholder": "Where can I reply"
     },
     "company": {
       "label": "Company name",
-      "placeholder": "Your company or website"
+      "placeholder": "Your company or website?"
     },
     "message": {
       "label": "Message:*",
-      "placeholder": "Tell us about your project, timeline, and goals..."
+      "placeholder": "Describe your project or idea in more detail..."
     },
     "services": {
-      "label": "What do you need?*"
+      "label": "What are you thinking of?*"
     },
     "submit": "Send",
-    "footer": "We reply within one business day"
+    "footer": "I will reply within 24 hours"
   }
 }

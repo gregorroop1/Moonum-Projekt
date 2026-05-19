@@ -1,22 +1,22 @@
 {
   "hero": {
-    "title1": "WEBSITES",
-    "title2": "& SOFTWARE",
-    "title3": "DONE RIGHT",
+    "title1": "CREATING",
+    "title2": "DIGITAL",
+    "title3": "EXPERIENCES",
     "tag": "[ MOONUM {{year}} ]",
-    "description": "WEB DEVELOPMENT AND CUSTOM SOFTWARE<br />FOR BUSINESSES IN ESTONIA",
+    "description": "ENGAGING AND RESULTS-ORIENTED<br />WEB DEVELOPMENT AND SOFTWARE ENGINEERING IN ESTONIA",
     "logo": "MOONUM",
     "nav": {
       "home": "Home",
       "services": "Services",
       "pricing": "Pricing"
     },
-    "cta": "Book a call",
-    "imageAlt": "Moonum - Web development and custom software studio in Estonia"
+    "cta": "Get in touch",
+    "imageAlt": "Moonum - Digital Experiences and Software Engineering visual"
   },
   "seo": {
-    "title": "Moonum — Website Development & Custom Software | Estonia",
-    "description": "Moonum is an Estonian web development and software studio. We build business websites, booking systems, CRM integrations, and custom tools for companies who value clean design and reliable code.",
-    "keywords": "website development estonia, web development, business websites, custom software, software development, booking systems, CRM integrations, automation, moonum"
+    "title": "Moonum - Digital Experiences & Software Engineering Estonia",
+    "description": "Moonum creates engaging, results-oriented web development and software engineering solutions in Estonia. Elevate your digital presence with our expert team.",
+    "keywords": "web development estonia, software engineering, digital experiences, moonum, custom software, responsive design"
   }
 }

@@ -12,32 +12,32 @@
     "marketing": "TURUNDUS"
   },
   "pricing": {
-    "meta": "KÜSI PAKKUMIST",
+    "meta": "SOOVIN INFOT",
     "plans": {
-      "01": "Baasveeb",
-      "02": "Äri veebileht",
-      "03": "Eritellimus",
-      "04": "E-pood",
+      "01": "Lihtne veeb",
+      "02": "Keerulisem veebileht",
+      "03": "Väljakutse",
+      "04": "Epood",
       "04-1": "SEO",
-      "04-2": "Hooldus",
-      "05": "CRM tarkvara",
+      "04-2": "Hooldused",
+      "05": "Klientide haldamise tarkvara",
       "05-1": "Protsesside automatiseerimine",
       "05-2": "Integratsioonid",
-      "06": "Reklaam",
-      "07": "Sotsiaalmeedia haldus"
+      "06": "Reklaamid",
+      "07": "Sotsiaalmeedia haldamine"
     },
     "descriptions": {
-      "01": "Puhas ja selge veebileht 1–3 lehega. Mobiilisõbralik, kiire ja otsingumootorites leitav. Lihtsalt see, mida sinu ettevõte veebis vajab.",
-      "02": "Mahukam projekt kohandatud kujunduse, animatsioonide ja sisustrateegiaga. Uurime turgu ja konkurente, et sinu leht teeks rohkem tööd kui teistel.",
-      "03": "Ettevõtetele, kes tahavad midagi päriselt eristuvat — 3D elemendid, keerukamad interaktsioonid või veeb, mida meelde jäetakse. Räägi meile, mida silmas pead.",
-      "04": "Toimiv e-pood maksete, laohalduse ja analüütikaga. Hoiame püsikulud madalad ja keskendume konversioonile — olenemata, kas alustad nullist või laienead.",
-      "04-1": "Pidev SEO: märksõnade uurimine, tehnilised parandused ja regulaarne aruandlus, et sinu leht oleks otsingumootorites seal, kus peab.",
-      "04-2": "Tegeleme uuendustega, turvapaikadega, jõudluse jälgimise ja sisuhaldusega. Sinu veeb püsib kiire ja turvaline ilma, et peaksid sellele mõtlema.",
-      "05": "CRM, mis on ehitatud sinu töövoo ümber. Halda kontakte, jälgi müügitoru ja hoia ärisuhted korras — ilma funktsioonide eest maksma, mida kunagi ei kasuta.",
-      "05-1": "Automatiseeri korduvad tööd. Ehitame töövood, mis säästavad aega ja vähendavad vigu, ühendatuna tööriistadega, mida juba kasutad.",
-      "05-2": "Ühenda olemasolevad platvormid — broneerimissüsteemid, CRM, makselahendused, e-post — et andmed liiguksid sinna, kuhu vaja, ilma käsitööta.",
-      "06": "Sihitud reklaamikampaaniad Google'is ja Metas. Seadistame, jälgime tulemusi ja optimeerime tulemuslikkust — mitte tühje numbreid.",
-      "07": "Järjepidev kohalolu sotsiaalmeedias selge strateegia, kvaliteetse sisu ja kogukonna haldamisega."
+      "01": "Lihtne veeb ei vaja selgitust, ta on ilus, puhas ja lihtne. 1-3 lehekülge, kerge SEO tõuge, loogiliselt ülesehitatud ja nii ongi!",
+      "02": "Veidi mahukam projekt, huvitavad animatsioonid, rohkem kui kolm lehekülge. Turu- ja konkurentide analüüs jne…",
+      "03": "Tahad teistest peajagu erineda näiteks 3D animatsioonide ja eriti interaktiivse veebilehega mis paneb teisi mõtlema nagu “Vauu, see on lahe!” Siis esita meile väljakutse",
+      "04": "Oled alustav või juba toimiv ettevõte? Suur või väike? Vahet pole, meie leiame just sulle parima võimaliku lahenduse, hoides sinu püsikulud madalad ja konversioonid kõrged.",
+      "04-1": "Mis seal salata, kes meist ei taha olla alati esimeste seas? See kehtib ka sinu veebilehele ja meie saame teda treenida, et ka tema jõuaks esimeste hulka!",
+      "04-2": "Hoiame silma peal sinuveebilehel, vajadusel teeme uuendusi, et hoida sinuveebileht turvaline, puhastame vahemälu, jälgime jõudlust ja haldame ka sisu.",
+      "05": "Kohandatud CRM lahendused klientide, müügitoru ja oluliste ärisuhete tõhusaks haldamiseks.",
+      "05-1": "Korduvate ülesannete ja töövoogude sujuvamaks muutmine intelligentsete automatiseerimislahendustega.",
+      "05-2": "Ühenda oma olemasolevad tööriistad ja platvormid sujuvaks andmevooluks kogu ettevõttes.",
+      "06": "Sihitud reklaamikampaaniad Google'is, Metas ja teistel platvormidel investeeringutasuvuse maksimeerimiseks.",
+      "07": "Järjepidev ja kaasahaarav sotsiaalmeedia kohalolek strateegia, sisuloomise ja kogukonna haldamisega."
     },
     "prices": {
       "01": "Al. 500€",
@@ -55,7 +55,7 @@
     "features": {
       "01": ["Kohanduv", "Kiire", "SEO-valmis"],
       "02": ["Kohandatud kood", "Animatsioonid", "CMS"],
-      "03": ["Eritellimus", "Interaktiivne", "Ambitsioonikas"],
+      "03": ["Kohandatud", "Innovaatiline", "Piiramatu"],
       "04": ["Maksed", "Laohaldus", "Analüütika"],
       "04-1": ["Märksõnad", "Optimeerimine", "Aruanded"],
       "04-2": ["Uuendused", "Turvalisus", "Jälgimine"],
@@ -68,28 +68,28 @@
   },
   "process": {
     "01": {
-      "title": "01. Vestlus",
-      "description": "Võta ühendust ja räägi, millega tegeled. Arutame eesmärke, sihtrühma ja ootusi — ausalt. Kui me ei ole õige valik, ütleme otse. Hea projekt algab sellest, et mõistame, mida sa tegelikult vajad."
+      "title": "01. Esmane kontakt",
+      "description": "Võtke meiega julgelt ühendust ja räägime sinu ideest täpsemalt, ära karda meile läbirääkimistel EI öelda sest, meie jaoks on oluline, et leiaksite endale tegija kes vastaks täpselt teie vajadustele. Kaardistame sinu eesmärgid, sihtgrupi ja ootused. See on kõige olulisem samm, sest hästi toimiv veebileht algab selgest visioonist. Meie eesmärk on mõista, mida sa tegelikult vajad — mitte lihtsalt mida sa arvad, et vajad."
     },
     "02": {
-      "title": "02. Uurimine ja strateegia",
-      "description": "Uurime sinu ettevõtet, turgu ja konkurente. Selle põhjal paneme paika selge plaani — lehe struktuur, kasutajakogemus, positsioneerimine — et tulemus ka päriselt töötaks."
+      "title": "02. Analüüs ja strateegia",
+      "description": "Sukeldume sinu projekti süvitsi. Analüüsime sinu ettevõtet, konkurente ja turgu. Loome selge strateegia, kuidas sinu veebileht saaks eristuda ja tuua reaalseid tulemusi. See sisaldab ka struktuuri, kasutajakogemuse (UX) ja positsioneerimise läbimõtlemist."
     },
     "03": {
-      "title": "03. Disain ja arendus",
-      "description": "Disainime ja arendame paralleelselt. Puhas visuaal, kiire laadimisaeg, SEO-sõbralik arhitektuur ja tähelepanu igale detailile. Ilma valmismallideta — kõik on kirjutatud ja kujundatud just sinu projekti jaoks."
+      "title": "03. Disain ja veebiarendus",
+      "description": "Disainime modernse ja visuaalselt eristuva veebilehe ning arendame selle tehniliselt kiireks, turvaliseks ja SEO-sõbralikuks. Iga detail on läbimõeldud — alates kasutajakogemusest kuni laadimiskiiruseni."
     },
     "04": {
-      "title": "04. Ülevaatus",
-      "description": "Vaatame tulemuse koos üle ja viimistleme. Tagasiside on osa protsessist — kohandame, kuni oled iga detailiga rahul."
+      "title": "04. Koos ülevaatus",
+      "description": "Vaatame koos tulemuse üle ja vajadusel teeme viimase lihvi. Esitleme sulle valminud lahendust ning kogume tagasisidet. Vajadusel teeme muudatused, et lõpptulemus vastaks täielikult sinu ootustele."
     },
     "05": {
-      "title": "05. Käivitamine",
-      "description": "Tegeleme tehnilise poolega — domeen, server, deploy — ja testime põhjalikult eri seadmetes ja brauserites. Kui leht läheb üles, siis ta töötab."
+      "title": "05. Avaldamine",
+      "description": "Toome sinu idee ellu. Seadistame kõik vajaliku — domeen, hosting, tehnilised detailid ja põhjalik testimine. Tagame, et veebileht töötab laitmatult kõigis seadmetes ja on valmis külastajaid vastu võtma."
     },
     "06": {
-      "title": "06. Jätkuv tugi",
-      "description": "Oleme kättesaadavad ka pärast käivitamist. Hooldus, uuendused ja edasiarendus, kui äri areneb. Veebileht peab sinuga koos kasvama."
+      "title": "06. Tugi ja järelhooldus",
+      "description": "Me ei kao pärast projekti lõppu. Pakume pidevat tuge, hooldust ja vajadusel edasiarendust. Sinu veebileht peab ajas arenema ja meie aitame sul sellel teekonnal kaasas olla."
     }
   },
   "servicesList": {
