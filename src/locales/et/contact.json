@@ -1,30 +1,30 @@
 {
   "header": {
-    "title1": "Ütle Tere!",
-    "title2": "ja räägi mulle oma ideest",
-    "description": "On sul hea idee? Võta ühendust ja räägime."
+    "title1": "Räägi meile",
+    "title2": "oma projektist",
+    "description": "On plaanis uus projekt? Kuulame hea meelega."
   },
   "form": {
     "name": {
       "label": "Nimi:*",
-      "placeholder": "Tere..."
+      "placeholder": "Sinu nimi"
     },
     "email": {
       "label": "E-post:*",
-      "placeholder": "Kuhu saan vastata"
+      "placeholder": "Kuhu saame vastata"
     },
     "company": {
       "label": "Ettevõtte nimi",
-      "placeholder": "Sinu ettevõte või veebileht?"
+      "placeholder": "Ettevõte või veebileht"
     },
     "message": {
       "label": "Sõnum:*",
-      "placeholder": "Kirjelda oma projekti või ideed lähemalt..."
+      "placeholder": "Kirjelda projekti, ajakava ja eesmärke..."
     },
     "services": {
-      "label": "Millele mõtled?*"
+      "label": "Mida vajad?*"
     },
     "submit": "Saada",
-    "footer": "Vastan teile 24 tunni jooksul"
+    "footer": "Vastame ühe tööpäeva jooksul"
   }
 }

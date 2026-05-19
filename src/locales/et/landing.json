@@ -1,22 +1,22 @@
 {
   "hero": {
-    "title1": "LUUES",
-    "title2": "DIGITAALSEID",
-    "title3": "ELAMUSI",
+    "title1": "VEEBILEHED",
+    "title2": "JA TARKVARA",
+    "title3": "KORRALIKULT",
     "tag": "[ MOONUM {{year}} ]",
-    "description": "KAASAHAARAVATE JA TULEMUSELE ORIENTEERITUD<br />VEEBILEHTEDE TEGEMINE NING TARKVARA ARENDUS EESTIS",
+    "description": "VEEBIARENDUS JA ERITARKVARA<br />EESTI ETTEVÕTETELE",
     "logo": "MOONUM",
     "nav": {
       "home": "Avaleht",
       "services": "Teenused",
       "pricing": "Hinnakiri"
     },
-    "cta": "Võta ühendust",
-    "imageAlt": "Moonum - Digitaalsed Elamused ja Tarkvara Arendus visuaal"
+    "cta": "Broneeri kõne",
+    "imageAlt": "Moonum - Veebiarendus ja tarkvara arendus Eestis"
   },
   "seo": {
-    "title": "Moonum - Digitaalsed Elamused ja Tarkvara Arendus Eestis",
-    "description": "Moonum loob kaasahaaravaid ja tulemusele orienteeritud veebilehti ning tarkvaralahendusi Eestis. Tõsta oma digitaalne kohalolu uuele tasemele.",
-    "keywords": "veebiarendus eestis, tarkvaraarendus, digitaalsed elamused, moonum, eritarkvara, veebidisain"
+    "title": "Moonum — Veebilehtede ja tarkvara arendus | Eesti",
+    "description": "Moonum on Eesti veebiarenduse ja tarkvara stuudio. Ehitame äri veebilehti, broneerimissüsteeme, CRM lahendusi ja eritarkvara ettevõtetele, kes hindavad puhast disaini ja usaldusväärset koodi.",
+    "keywords": "veebiarendus eesti, veebilehtede tegemine, äri veebilehed, tarkvaraarendus, eritarkvara, broneerimissüsteemid, CRM integratsioonid, automatiseerimine, moonum"
   }
 }

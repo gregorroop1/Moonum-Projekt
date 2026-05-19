@@ -14,9 +14,9 @@
   "pricing": {
     "meta": "GET A QUOTE",
     "plans": {
-      "01": "Simple Website",
-      "02": "Complex Website",
-      "03": "Challenge",
+      "01": "Starter Website",
+      "02": "Business Website",
+      "03": "Custom Build",
       "04": "E-commerce",
       "04-1": "SEO",
       "04-2": "Maintenance",
@@ -27,17 +27,17 @@
       "07": "Social Media Management"
     },
     "descriptions": {
-      "01": "A simple web needs no explanation; it is beautiful, clean, and simple. 1-3 pages, a light SEO boost, logically structured, and that's it!",
-      "02": "A slightly larger project, interesting animations, more than three pages. Market and competitor analysis, etc...",
-      "03": "Want to stand out head and shoulders above the rest with, for example, 3D animations and an especially interactive website that makes others think “Wow, this is cool!”? Then give us a challenge.",
-      "04": "Are you a starting or already functioning company? Large or small? It doesn't matter, we will find the best possible solution just for you, keeping your fixed costs low and conversions high.",
-      "04-1": "What can we say, who among us doesn't want to always be among the first? This also applies to your website, and we can train it so that it too reaches the top!",
-      "04-2": "We keep an eye on your website, make updates when necessary to keep your website secure, clear the cache, monitor performance, and also manage content.",
-      "05": "Custom CRM solutions to manage your customers, sales pipeline, and key business relationships effectively.",
-      "05-1": "Streamline repetitive tasks and workflows with intelligent automation solutions built for your needs.",
-      "05-2": "Connect your existing tools and platforms for seamless data flow across your entire business.",
-      "06": "Targeted advertising campaigns across Google, Meta, and other platforms to maximize your return on investment.",
-      "07": "Consistent, engaging social media presence with strategy, content creation, and community management."
+      "01": "A clean, well-structured website with 1–3 pages. Responsive, fast, and search-engine ready. No bloat — just what your business needs to look credible online.",
+      "02": "A larger project with custom layout, considered animations, and content strategy. Includes competitor and market review to make sure your site works harder than theirs.",
+      "03": "For businesses that want something genuinely distinctive — 3D elements, advanced interactions, or a website that people remember. Tell us what you're after.",
+      "04": "A working online store with payment processing, inventory management, and analytics. We keep running costs low and focus on conversion — whether you're starting fresh or scaling up.",
+      "04-1": "Ongoing search engine optimisation: keyword research, technical improvements, and regular reporting so your site ranks where it should.",
+      "04-2": "We handle updates, security patches, performance monitoring, cache management, and content changes. Your site stays fast and secure without you thinking about it.",
+      "05": "A custom CRM built around your workflow. Manage contacts, track your pipeline, and keep your business relationships organised — without paying for features you'll never use.",
+      "05-1": "Automate the repetitive parts of your business. We build workflows that save time and reduce errors, connected to the tools you already use.",
+      "05-2": "Connect your existing platforms — booking systems, CRMs, payment tools, email — so data flows where it needs to without manual work.",
+      "06": "Targeted ad campaigns on Google and Meta. We set them up, monitor performance, and optimise for results — not vanity metrics.",
+      "07": "Consistent social media presence with clear strategy, quality content, and community management."
     },
     "prices": {
       "01": "From 500€",
@@ -55,7 +55,7 @@
     "features": {
       "01": ["Responsive", "Fast", "SEO-Ready"],
       "02": ["Custom Code", "Animations", "CMS"],
-      "03": ["Custom", "Innovative", "Unlimited"],
+      "03": ["Bespoke", "Interactive", "Ambitious"],
       "04": ["Payments", "Inventory", "Analytics"],
       "04-1": ["Keywords", "Optimization", "Reports"],
       "04-2": ["Updates", "Security", "Monitoring"],
@@ -68,28 +68,28 @@
   },
   "process": {
     "01": {
-      "title": "01. Initial Contact",
-      "description": "Feel free to contact us and let's talk about your idea in more detail. Don't be afraid to say NO to us during negotiations, because it's important to us that you find a developer who meets exactly your needs. We map your goals, target audience, and expectations. This is the most important step because a well-functioning website starts with a clear vision. Our goal is to understand what you actually need — not just what you think you need."
+      "title": "01. Conversation",
+      "description": "Get in touch and tell us what you're working on. We'll discuss your goals, audience, and expectations — honestly. If we're not the right fit, we'll tell you. A good project starts with a clear understanding of what you actually need."
     },
     "02": {
-      "title": "02. Analysis and Strategy",
-      "description": "We dive deep into your project. We analyze your business, competitors, and market. We create a clear strategy on how your website can stand out and bring real results. This also includes thinking through the structure, user experience (UX), and positioning."
+      "title": "02. Research & Strategy",
+      "description": "We study your business, your market, and your competitors. From there, we build a clear plan — site structure, user experience, positioning — so the end result performs, not just looks good."
     },
     "03": {
-      "title": "03. Design and Development",
-      "description": "We design a modern and visually distinctive website and develop it technically to be fast, secure, and SEO-friendly. Every detail is thought through — from user experience to loading speed."
+      "title": "03. Design & Development",
+      "description": "We design and build your site in parallel. Clean visuals, fast load times, SEO-friendly architecture, and attention to detail at every level. No templates. Everything is written and designed for your project."
     },
     "04": {
-      "title": "04. Joint Review",
-      "description": "We review the result together and put the finishing touches if necessary. We present the completed solution to you and collect feedback. If necessary, we make changes so that the final result fully meets your expectations."
+      "title": "04. Review",
+      "description": "You see the result, we walk through it together, and we refine. Feedback is part of the process — we adjust until you're satisfied with every detail."
     },
     "05": {
-      "title": "05. Publishing",
-      "description": "We bring your idea to life. We configure everything necessary — domain, hosting, technical details, and thorough testing. We ensure that the website works flawlessly on all devices and is ready to receive visitors."
+      "title": "05. Launch",
+      "description": "We handle the technical setup — domain, hosting, deployment — and test thoroughly across devices and browsers. When it goes live, it works."
     },
     "06": {
-      "title": "06. Support and Maintenance",
-      "description": "We don't disappear after the project ends. We offer continuous support, maintenance, and further development if necessary. Your website must evolve over time, and we help you along that journey."
+      "title": "06. Ongoing Support",
+      "description": "We stay available after launch. Maintenance, updates, and further development when your business evolves. Your site should grow with you."
     }
   },
   "servicesList": {
