@@ -25,23 +25,27 @@
     "sections": {
       "1": {
         "title": "1. Information We Collect",
-        "content": "When you use our contact form, we collect personal information that you voluntarily provide to us, including your name, email address, company name, and the contents of your message."
+        "content": "We collect personal information you voluntarily provide via our contact form (name, email, company, message). Additionally, we automatically collect certain information about your device and browsing behavior through Google Analytics, provided you have given cookie consent."
       },
       "2": {
         "title": "2. How We Use Your Information",
-        "content": "We use the information we collect primarily to respond to your inquiries, provide customer support, and communicate with you regarding your requested services. We do not sell or rent your personal information to third parties."
+        "content": "We use your contact information to respond to inquiries and provide customer support. Analytics data is used in an aggregated manner to measure website performance, understand user behavior, and improve our digital services. We do not sell your personal data to third parties."
       },
       "3": {
-        "title": "3. Data Security",
-        "content": "We implement appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, please also remember that we cannot guarantee that the internet itself is 100% secure."
+        "title": "3. Cookies & Google Analytics",
+        "content": "We use cookies and Google Analytics to measure website traffic. Google Analytics may collect your IP address, device type, and browsing patterns. By default, no tracking cookies are set unless you explicitly click \"Accept\" on our cookie banner. You can decline or revoke this consent at any time."
       },
       "4": {
-        "title": "4. Your Privacy Rights",
-        "content": "Depending on your location, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please contact us at our email address."
+        "title": "4. Data Security",
+        "content": "We implement appropriate technical and organizational security measures to protect your personal information. However, please remember that no method of transmission over the internet is 100% secure."
       },
       "5": {
-        "title": "5. Updates to This Policy",
-        "content": "We may update this privacy notice from time to time. The updated version will be indicated by an updated \"Revised\" date and the updated version will be effective as soon as it is accessible."
+        "title": "5. Your Privacy Rights",
+        "content": "Under the GDPR, you have the right to access, rectify, or erase your personal data. You may also restrict or object to our processing of your data. To exercise these rights, please contact us via email."
+      },
+      "6": {
+        "title": "6. Updates to This Policy",
+        "content": "We may update this privacy notice periodically. The updated version will be effective as soon as it is published on our website."
       }
     }
   },

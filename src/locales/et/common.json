@@ -25,23 +25,27 @@
     "sections": {
       "1": {
         "title": "1. Millist teavet me kogume",
-        "content": "Kui kasutate meie kontaktivormi, kogume isikuandmeid, mida te meile vabatahtlikult esitate, sealhulgas teie nimi, e-posti aadress, ettevõtte nimi ja sõnumi sisu."
+        "content": "Kogume isikuandmeid, mida edastate meile vabatahtlikult kontaktivormi kaudu (nimi, e-post, ettevõte, sõnum). Lisaks kogume Google Analyticsi abil automaatselt teavet teie seadme ja veebilehe kasutuse kohta, kui olete andnud selleks küpsiste nõusoleku."
       },
       "2": {
         "title": "2. Kuidas me teie teavet kasutame",
-        "content": "Kogutud teavet kasutame peamiselt teie päringutele vastamiseks, klienditoe pakkumiseks ja teiega suhtlemiseks seoses soovitud teenustega. Me ei müü ega rendi teie isikuandmeid kolmandatele osapooltele."
+        "content": "Kasutame teie kontaktandmeid päringutele vastamiseks ja klienditoe pakkumiseks. Analüütilisi andmeid kasutatakse üldistatud kujul veebilehe toimivuse mõõtmiseks ja meie teenuste parandamiseks. Me ei müü teie isikuandmeid kolmandatele osapooltele."
       },
       "3": {
-        "title": "3. Andmeturve",
-        "content": "Rakendame asjakohaseid tehnilisi ja korralduslikke turvameetmeid, mis on loodud töödeldavate isikuandmete turvalisuse kaitsmiseks. Kuid pidage meeles, et me ei saa garanteerida interneti 100% turvalisust."
+        "title": "3. Küpsised ja Google Analytics",
+        "content": "Kasutame küpsiseid ja Google Analyticsit veebiliikluse mõõtmiseks. See teenus võib koguda teie IP-aadressi, seadme tüüpi ja sirvimisharjumusi. Vaikimisi ei paigaldata teie seadmesse jälgimisküpsiseid, välja arvatud juhul, kui klõpsate küpsiste bänneril \"Nõustun\". Nõusolekust on võimalik igal ajal keelduda või see tagasi võtta."
       },
       "4": {
-        "title": "4. Teie privaatsusõigused",
-        "content": "Sõltuvalt teie asukohast võib teil olla õigus taotleda juurdepääsu isikuandmetele, mida me teie kohta kogume, seda teavet muuta või teatud asjaoludel kustutada. Oma isikuandmete ülevaatamise, värskendamise või kustutamise taotlemiseks võtke meiega ühendust meie e-posti aadressil."
+        "title": "4. Andmeturve",
+        "content": "Rakendame asjakohaseid tehnilisi ja korralduslikke turvameetmeid teie isikuandmete kaitsmiseks. Siiski palume meeles pidada, et ükski andmeedastusviis internetis ei ole 100% turvaline."
       },
       "5": {
-        "title": "5. Selle poliitika uuendused",
-        "content": "Võime seda privaatsusteatist aeg-ajalt uuendada. Uuendatud versiooni tähistab uuendatud \"Muudetud\" kuupäev ja uuendatud versioon jõustub niipea, kui see on kättesaadav."
+        "title": "5. Teie privaatsusõigused (GDPR)",
+        "content": "Vastavalt isikuandmete kaitse üldmäärusele (GDPR) on teil õigus taotleda juurdepääsu oma isikuandmetele, neid parandada või kustutada. Samuti võite piirata või esitada vastuväiteid andmete töötlemisele. Nende õiguste kasutamiseks võtke meiega ühendust e-posti teel."
+      },
+      "6": {
+        "title": "6. Selle poliitika uuendused",
+        "content": "Võime seda privaatsuspoliitikat aeg-ajalt uuendada. Uuendatud versioon jõustub kohe, kui see on meie veebilehel avaldatud."
       }
     }
   },

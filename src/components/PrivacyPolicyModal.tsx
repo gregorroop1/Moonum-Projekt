@@ -49,7 +49,7 @@ const PrivacyPolicyModal: React.FC<PrivacyPolicyModalProps> = ({ isOpen, onClose
 
         {/* Body */}
         <div className="p-6 md:p-8 overflow-y-auto space-y-6 text-zinc-600 leading-relaxed text-left">
-          {[1, 2, 3, 4, 5].map((num) => (
+          {[1, 2, 3, 4, 5, 6].map((num) => (
             <section key={num}>
               <h3 className="text-lg font-bold text-black uppercase tracking-tight mb-2">
                 {t(`privacyPolicy.sections.${num}.title`)}
