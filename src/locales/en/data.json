@@ -1,104 +1,107 @@
 {
-  "menu": {
-    "home": "Home",
-    "services": "Services",
-    "pricing": "Pricing",
-    "works": "Our Work",
-    "contact": "Contact"
-  },
-  "categories": {
-    "websites": "WEBSITES",
-    "software": "SOFTWARE",
-    "marketing": "MARKETING"
-  },
-  "pricing": {
-    "meta": "GET A QUOTE",
-    "plans": {
-      "01": "Simple Website",
-      "02": "Complex Website",
-      "03": "Challenge",
-      "04": "E-commerce",
-      "04-1": "SEO",
-      "04-2": "Maintenance",
-      "05": "CRM Software",
-      "05-1": "Process Automation",
-      "05-2": "Integrations",
-      "06": "Advertising",
-      "07": "Social Media Management"
-    },
-    "descriptions": {
-      "01": "A simple web needs no explanation; it is beautiful, clean, and simple. 1-3 pages, a light SEO boost, logically structured, and that's it!",
-      "02": "A slightly larger project, interesting animations, more than three pages. Market and competitor analysis, etc...",
-      "03": "Want to stand out head and shoulders above the rest with, for example, 3D animations and an especially interactive website that makes others think “Wow, this is cool!”? Then give us a challenge.",
-      "04": "Are you a starting or already functioning company? Large or small? It doesn't matter, we will find the best possible solution just for you, keeping your fixed costs low and conversions high.",
-      "04-1": "What can we say, who among us doesn't want to always be among the first? This also applies to your website, and we can train it so that it too reaches the top!",
-      "04-2": "We keep an eye on your website, make updates when necessary to keep your website secure, clear the cache, monitor performance, and also manage content.",
-      "05": "Custom CRM solutions to manage your customers, sales pipeline, and key business relationships effectively.",
-      "05-1": "Streamline repetitive tasks and workflows with intelligent automation solutions built for your needs.",
-      "05-2": "Connect your existing tools and platforms for seamless data flow across your entire business.",
-      "06": "Targeted advertising campaigns across Google, Meta, and other platforms to maximize your return on investment.",
-      "07": "Consistent, engaging social media presence with strategy, content creation, and community management."
-    },
-    "prices": {
-      "01": "From 500€",
-      "02": "From 850€",
-      "03": "From 2000€",
-      "04": "From 1200€",
-      "04-1": "From 300€/mo",
-      "04-2": "45€/h",
-      "05": "From 1500€",
-      "05-1": "From 1000€",
-      "05-2": "From 500€",
-      "06": "From 400€/mo",
-      "07": "From 350€/mo"
-    },
-    "features": {
-      "01": ["Responsive", "Fast", "SEO-Ready"],
-      "02": ["Custom Code", "Animations", "CMS"],
-      "03": ["Custom", "Innovative", "Unlimited"],
-      "04": ["Payments", "Inventory", "Analytics"],
-      "04-1": ["Keywords", "Optimization", "Reports"],
-      "04-2": ["Updates", "Security", "Monitoring"],
-      "05": ["Dashboard", "Automation", "Reports"],
-      "05-1": ["Workflows", "Integration", "Efficiency"],
-      "05-2": ["API", "Data Sync", "Scalable"],
-      "06": ["Google Ads", "Meta Ads", "ROI Tracking"],
-      "07": ["Strategy", "Content", "Growth"]
-    }
-  },
-  "process": {
-    "01": {
-      "title": "01. Initial Contact",
-      "description": "Feel free to contact us and let's talk about your idea in more detail. Don't be afraid to say NO to us during negotiations, because it's important to us that you find a developer who meets exactly your needs. We map your goals, target audience, and expectations. This is the most important step because a well-functioning website starts with a clear vision. Our goal is to understand what you actually need — not just what you think you need."
-    },
-    "02": {
-      "title": "02. Analysis and Strategy",
-      "description": "We dive deep into your project. We analyze your business, competitors, and market. We create a clear strategy on how your website can stand out and bring real results. This also includes thinking through the structure, user experience (UX), and positioning."
-    },
-    "03": {
-      "title": "03. Design and Development",
-      "description": "We design a modern and visually distinctive website and develop it technically to be fast, secure, and SEO-friendly. Every detail is thought through — from user experience to loading speed."
-    },
-    "04": {
-      "title": "04. Joint Review",
-      "description": "We review the result together and put the finishing touches if necessary. We present the completed solution to you and collect feedback. If necessary, we make changes so that the final result fully meets your expectations."
-    },
-    "05": {
-      "title": "05. Publishing",
-      "description": "We bring your idea to life. We configure everything necessary — domain, hosting, technical details, and thorough testing. We ensure that the website works flawlessly on all devices and is ready to receive visitors."
-    },
-    "06": {
-      "title": "06. Support and Maintenance",
-      "description": "We don't disappear after the project ends. We offer continuous support, maintenance, and further development if necessary. Your website must evolve over time, and we help you along that journey."
-    }
-  },
-  "servicesList": {
-    "mobileApp": "Mobile App",
-    "webDesign": "Web Design",
-    "branding": "Branding",
-    "webflow": "Webflow Development",
-    "appDesign": "App Design",
-    "graphicDesign": "Graphic Design",
-    "wordpress": "Wordpress"
-  }
+	"menu": {
+		"home": "Home",
+		"services": "Services",
+		"pricing": "Pricing",
+		"works": "Our Work",
+		"contact": "Contact"
+	},
+	"categories": {
+		"websites": "WEBSITES",
+		"software": "SOFTWARE",
+		"marketing": "MARKETING"
+	},
+	"pricing": {
+		"title": "PRICING",
+		"description": "Project-based pricing depending on the scope and complexity of the solution.",
+		"meta": "GET A QUOTE",
+		"plans": {
+			"01": "Simple Website",
+			"02": "Complex Website",
+			"03": "Challenge",
+			"04": "E-commerce",
+			"04-1": "SEO",
+			"04-2": "Maintenance",
+			"05": "CRM Software",
+			"05-1": "Process Automation",
+			"05-2": "Integrations",
+			"06": "Advertising",
+			"07": "Social Media Management"
+		},
+		"descriptions": {
+			"01": "A simple web needs no explanation; it is beautiful, clean, and simple. 1-3 pages, a light SEO boost, logically structured, and that's it!",
+			"02": "A slightly larger project, interesting animations, more than three pages. Market and competitor analysis, etc...",
+			"03": "Want to stand out head and shoulders above the rest with, for example, 3D animations and an especially interactive website that makes others think “Wow, this is cool!”? Then give us a challenge.",
+			"04": "Are you a starting or already functioning company? Large or small? It doesn't matter, we will find the best possible solution just for you, keeping your fixed costs low and conversions high.",
+			"04-1": "What can we say, who among us doesn't want to always be among the first? This also applies to your website, and we can train it so that it too reaches the top!",
+			"04-2": "We keep an eye on your website, make updates when necessary to keep your website secure, clear the cache, monitor performance, and also manage content.",
+			"05": "Custom CRM solutions to manage your customers, sales pipeline, and key business relationships effectively.",
+			"05-1": "Streamline repetitive tasks and workflows with intelligent automation solutions built for your needs.",
+			"05-2": "Connect your existing tools and platforms for seamless data flow across your entire business.",
+			"06": "Targeted advertising campaigns across Google, Meta, and other platforms to maximize your return on investment.",
+			"07": "Consistent, engaging social media presence with strategy, content creation, and community management."
+		},
+		"prices": {
+			"01": "From 500€",
+			"02": "From 850€",
+			"03": "From 2000€",
+			"04": "From 1200€",
+			"04-1": "From 300€/mo",
+			"04-2": "45€/h",
+			"05": "From 1500€",
+			"05-1": "From 1000€",
+			"05-2": "From 500€",
+			"06": "From 400€/mo",
+			"07": "From 350€/mo"
+		},
+		"features": {
+			"01": ["Responsive", "Fast", "SEO-Ready"],
+			"02": ["Custom Code", "Animations", "CMS"],
+			"03": ["Custom", "Innovative", "Unlimited"],
+			"04": ["Payments", "Inventory", "Analytics"],
+			"04-1": ["Keywords", "Optimization", "Reports"],
+			"04-2": ["Updates", "Security", "Monitoring"],
+			"05": ["Dashboard", "Automation", "Reports"],
+			"05-1": ["Workflows", "Integration", "Efficiency"],
+			"05-2": ["API", "Data Sync", "Scalable"],
+			"06": ["Google Ads", "Meta Ads", "ROI Tracking"],
+			"07": ["Strategy", "Content", "Growth"]
+		}
+	},
+	"process": {
+		"header": "Our Process",
+		"01": {
+			"title": "01. Initial Contact",
+			"description": "Feel free to contact us and let's talk about your idea in more detail. Don't be afraid to say NO to us during negotiations, because it's important to us that you find a developer who meets exactly your needs. We map your goals, target audience, and expectations. This is the most important step because a well-functioning website starts with a clear vision. Our goal is to understand what you actually need — not just what you think you need."
+		},
+		"02": {
+			"title": "02. Analysis and Strategy",
+			"description": "We dive deep into your project. We analyze your business, competitors, and market. We create a clear strategy on how your website can stand out and bring real results. This also includes thinking through the structure, user experience (UX), and positioning."
+		},
+		"03": {
+			"title": "03. Design and Development",
+			"description": "We design a modern and visually distinctive website and develop it technically to be fast, secure, and SEO-friendly. Every detail is thought through — from user experience to loading speed."
+		},
+		"04": {
+			"title": "04. Joint Review",
+			"description": "We review the result together and put the finishing touches if necessary. We present the completed solution to you and collect feedback. If necessary, we make changes so that the final result fully meets your expectations."
+		},
+		"05": {
+			"title": "05. Publishing",
+			"description": "We bring your idea to life. We configure everything necessary — domain, hosting, technical details, and thorough testing. We ensure that the website works flawlessly on all devices and is ready to receive visitors."
+		},
+		"06": {
+			"title": "06. Support and Maintenance",
+			"description": "We don't disappear after the project ends. We offer continuous support, maintenance, and further development if necessary. Your website must evolve over time, and we help you along that journey."
+		}
+	},
+	"servicesList": {
+		"mobileApp": "Mobile App",
+		"webDesign": "Web Design",
+		"branding": "Branding",
+		"webflow": "Webflow Development",
+		"appDesign": "App Design",
+		"graphicDesign": "Graphic Design",
+		"wordpress": "Wordpress"
+	}
 }

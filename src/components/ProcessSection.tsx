@@ -135,7 +135,7 @@ const InfiniteGridBackground = ({ mouseX, mouseY, isMobile }: { mouseX: any; mou
 };
 
 const ProcessSection: React.FC = () => {
-  const { t } = useTranslation(['process', 'data']);
+  const { t } = useTranslation('data');
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -219,7 +219,7 @@ const ProcessSection: React.FC = () => {
           className="flex flex-col items-center text-center gap-12 mb-32"
         >
           <h2 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] tracking-tighter max-w-5xl uppercase">
-            {t('header', { ns: 'process' })}
+            {t('process.header')}
           </h2>
           <div className="w-24 h-px bg-purple-500/50"></div>
         </motion.div>

@@ -53,7 +53,6 @@ export function scrollToSection(
   // Scroll to top for "#" or empty
   if (!href || href === '#') {
     smoothScrollTo(0, 600);
-    history.replaceState(null, '', window.location.pathname);
     return;
   }
 
@@ -69,6 +68,5 @@ export function scrollToSection(
     const duration = Math.min(Math.max(distance / 4, 500), 1000); 
     
     smoothScrollTo(targetY, duration);
-    history.replaceState(null, '', href);
   }
 }

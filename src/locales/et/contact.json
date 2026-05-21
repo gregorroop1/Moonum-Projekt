@@ -26,5 +26,10 @@
     },
     "submit": "Saada",
     "footer": "Vastan teile 24 tunni jooksul"
+  },
+  "success": {
+    "title": "Sõnum saadetud!",
+    "description": "Aitäh ühendust võtmast. Vastan teile esimesel võimalusel.",
+    "button": "Saada uus sõnum"
   }
 }

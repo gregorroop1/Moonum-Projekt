@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { SITE_INFO } from '../constants/data';
 
 interface SEOMetadataProps {
   // Optional overrides
@@ -16,7 +17,7 @@ const SEOMetadata: React.FC<SEOMetadataProps> = ({
   description,
   keywords,
   image = '/Alpaca_blizidega.webp', // Default hero image
-  url = 'https://moonum.ee', // Replace with actual domain
+  url = SITE_INFO.url, // Centralized domain
 }) => {
   const { t } = useTranslation('landing');
 

@@ -5,7 +5,7 @@ import { scrollToSection } from '@/lib/smoothScroll';
 import { motion } from 'framer-motion';
 
 const PricingSection: React.FC = () => {
-  const { t } = useTranslation(['pricing', 'data']);
+  const { t } = useTranslation('data');
   const [activeCategory, setActiveCategory] = useState<Category>(CATEGORIES[0]);
 
   useEffect(() => {
@@ -44,10 +44,10 @@ const PricingSection: React.FC = () => {
         className="text-center max-w-2xl mx-auto mb-14 relative"
       >
         <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6 relative z-10">
-          {t('header.title', { ns: 'pricing' })}
+          {t('pricing.title')}
         </h2>
         <p className="text-zinc-500 text-sm leading-relaxed relative z-10 px-8">
-          {t('header.description', { ns: 'pricing' })}
+          {t('pricing.description')}
         </p>
 
         {/* Slanted lines decorative circle (Floating Right) */}

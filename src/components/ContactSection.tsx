@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Zap, ChevronDown } from 'lucide-react';
 import { CATEGORIES, PLANS_BY_CATEGORY } from '../constants/data';
 import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 const ContactSection: React.FC = () => {
@@ -153,17 +153,20 @@ const ContactSection: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="w-full max-w-3xl mx-auto py-20 text-center space-y-6"
           >
-            <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-24 h-24 bg-black flex items-center justify-center mx-auto mb-8 [clip-path:polygon(50%_0,100%_50%,50%_100%,0_50%)]">
               <Zap className="text-white fill-current" size={32} />
             </div>
-            <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">Message Sent!</h3>
-            <p className="text-zinc-500 text-lg">Thank you for reaching out. We'll get back to you as soon as possible.</p>
-            <button 
-              onClick={() => setStatus('idle')}
-              className={cn(buttonVariants({ variant: "outline" }), "mt-8")}
-            >
-              Send another message
-            </button>
+            <h3 className="text-3xl font-display font-bold uppercase tracking-tighter">{t('success.title', { ns: 'contact' })}</h3>
+            <p className="text-zinc-500 text-lg">{t('success.description', { ns: 'contact' })}</p>
+            <div className="flex justify-center">
+              <Button
+                onClick={() => setStatus('idle')}
+                variant="polygon2"
+                className="mt-8 px-8 py-5 text-[10px] flex items-center gap-3 mx-auto"
+              >
+                {t('success.button', { ns: 'contact' })}
+              </Button>
+            </div>
           </motion.div>
         ) : (
           <motion.form 

@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Email Configuration
-    $to = "contact@moonum.ee";
+    $to = "kontakt@moonum.ee";
     $subject = "New Contact Form Submission from $name";
     
     // Email Content
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Email Headers
     // Using current host to ensure delivery on temporary and final domains
-    $headers = "From: Moonum Website <contact@moonum.ee>\r\n";
+    $headers = "From: Moonum Website <kontakt@moonum.ee>\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
     $headers .= "MIME-Version: 1.0\r\n";

@@ -1,46 +1,57 @@
 {
-  "social": {
-    "facebook": "FACEBOOK",
-    "tiktok": "TIKTOK",
-    "instagram": "INSTAGRAM",
-    "email": "Info@moonum.ee"
-  },
-  "header": {
-    "tag": "services",
-    "title": "What do we<br />Offer?",
-    "description": "We create visually striking and logically structured web solutions that tell the unique story of your brand. Our web development is based on a deep understanding of UI/UX design and user experience."
-  },
-  "sidebar": "SCROLL DOWN",
-  "cards": {
-    "software": "SOFTWARE",
-    "websites": "WEBSITES",
-    "marketing": "MARKETING",
-    "readMore": "READ MORE",
-    "contactUs": "Contact Us",
-    "viewPlans": "View Packages",
-    "info": {
-      "software": {
-        "title": "Custom Software Development",
-        "description": "We build scalable, high-performance software solutions tailored to your specific business needs. From complex enterprise systems to innovative startups.",
-        "features": ["Cloud Solutions", "API Integration", "Database Design", "Security Audits"]
-      },
-      "websites": {
-        "title": "Premium Website Design",
-        "description": "Stunning, high-converting websites built with modern technology. We focus on speed, accessibility, and unique visual storytelling.",
-        "features": ["React & Next.js", "Headless CMS", "Performance Optimization", "SEO Strategy"]
-      },
-      "marketing": {
-        "title": "Strategic Digital Marketing",
-        "description": "Data-driven marketing strategies that amplify your brand's reach and drive meaningful engagement with your target audience.",
-        "features": ["Growth Strategy", "Content Marketing", "Social Ads", "Conversion Analysis"]
-      }
-    }
-  },
-  "marquee": [
-    "WEB DESIGN",
-    "APP DESIGN",
-    "DEVELOPMENT",
-    "WEB FLOW",
-    "BRANDING"
-  ]
+	"header": {
+		"tag": "services",
+		"title": "What do we<br />Offer?",
+		"description": "We create visually striking and logically structured web solutions that tell the unique story of your brand. Our web development is based on a deep understanding of UI/UX design and user experience."
+	},
+	"sidebar": "SCROLL DOWN",
+	"cards": {
+		"software": "SOFTWARE",
+		"websites": "WEBSITES",
+		"marketing": "MARKETING",
+		"readMore": "READ MORE",
+		"contactUs": "Contact Us",
+		"viewPlans": "View Packages",
+		"info": {
+			"software": {
+				"title": "Custom Software Development",
+				"description": "We build practical software systems tailored to business operations, helping automate processes and centralize data.",
+				"features": [
+					"Cloud-based systems",
+					"API integrations",
+					"Admin dashboards",
+					"Process automation"
+				]
+			},
+			"websites": {
+				"title": "Premium Website Design",
+				"description": "Fast, modern websites designed to convert visitors into customers. Focused on usability, performance, and clear user experience.",
+				"features": [
+					"React & Next.js",
+					"Admin interface",
+					"Wordpress",
+					"Performance optimization",
+					"Technical SEO"
+				]
+			},
+			"marketing": {
+				"title": "Digital Marketing",
+				"description": "Marketing focused on increasing visibility and attracting qualified traffic through practical, measurable channels.",
+				"features": [
+					"Content marketing",
+					"Social media ads",
+					"Brand visibility",
+					"Performance tracking"
+				]
+			}
+		}
+	},
+	"marquee": [
+		"WEB DESIGN",
+		"DEVELOPMENT",
+		"AUTOMATION",
+		"CRM SYSTEMS",
+		"INTEGRATIONS",
+		"BRANDING"
+	]
 }

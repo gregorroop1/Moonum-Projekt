@@ -54,7 +54,8 @@ export const SERVICES_LIST = [
 import { InstagramIcon, LinkedinIcon, TwitterIcon, FacebookIcon, TiktokIcon } from '../components/icons';
 
 export const SITE_INFO = {
-  email: 'moonumagency@gmail.com',
+  url: 'https://moonum.ee',
+  email: 'kontakt@moonum.ee',
   phone: '+372 5665 5288',
   social: [
     { id: 'facebook', name: 'Facebook', url: 'https://www.facebook.com/100093375521992', icon: FacebookIcon },

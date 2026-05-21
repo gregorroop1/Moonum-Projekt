@@ -4,11 +4,7 @@
  */
 
 import {
-  Suspense,
-  lazy,
   useEffect,
-  useRef,
-  useState,
   type ReactNode,
 } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -20,59 +16,11 @@ import SEOMetadata from './components/SEOMetadata';
 import StructuredData from './components/StructuredData';
 import CookieConsent from './components/CookieConsent';
 
-const ServicesSection = lazy(() => import('./components/ServicesSection'));
-const PricingSection = lazy(() => import('./components/PricingSection'));
-const ProcessSection = lazy(() => import('./components/ProcessSection'));
-const ContactSection = lazy(() => import('./components/ContactSection'));
+import ServicesSection from './components/ServicesSection';
+import PricingSection from './components/PricingSection';
+import ProcessSection from './components/ProcessSection';
+import ContactSection from './components/ContactSection';
 import FooterSection from './components/FooterSection';
-
-function DeferredSection({
-  children,
-  fallback,
-  id,
-  rootMargin = '500px 0px',
-}: {
-  children: ReactNode;
-  fallback: ReactNode;
-  id?: string;
-  rootMargin?: string;
-}) {
-  const anchorRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const target = anchorRef.current;
-    if (!target || isVisible) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin }
-    );
-
-    observer.observe(target);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [isVisible, rootMargin]);
-
-  return (
-    <div ref={anchorRef} id={id}>
-      {isVisible ? <Suspense fallback={fallback}>{children}</Suspense> : fallback}
-    </div>
-  );
-}
-
-function SectionFallback({ minHeight }: { minHeight: string }) {
-  return <div aria-hidden="true" className={`w-full ${minHeight}`} />;
-}
 
 export default function App() {
   const { i18n } = useTranslation();
@@ -90,18 +38,18 @@ export default function App() {
         <MoonumLanding />
         <div className="relative z-20">
           <Marquee />
-          <DeferredSection id="services" fallback={<SectionFallback minHeight="min-h-[60vh]" />}>
+          <div id="services">
             <ServicesSection />
-          </DeferredSection>
-          <DeferredSection id="pricing" fallback={<SectionFallback minHeight="min-h-[65vh]" />}>
+          </div>
+          <div id="pricing">
             <PricingSection />
-          </DeferredSection>
-          <DeferredSection id="process" fallback={<SectionFallback minHeight="min-h-[70vh]" />}>
+          </div>
+          <div id="process">
             <ProcessSection />
-          </DeferredSection>
-          <DeferredSection id="contact" fallback={<SectionFallback minHeight="min-h-[55vh]" />}>
+          </div>
+          <div id="contact">
             <ContactSection />
-          </DeferredSection>
+          </div>
         </div>
         <FooterSection />
         <CookieConsent />
