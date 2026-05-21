@@ -1,0 +1,115 @@
+# =============================================================================
+# CI/CD Pipeline: Build & Deploy to Bluehost via FTPS
+# =============================================================================
+# This workflow automatically builds the project and deploys the production
+# build output to a Bluehost cPanel hosting environment via FTPS.
+#
+# Required GitHub Secrets:
+#   FTP_PASSWORD  — FTP password for the deployment account
+#   FTP_SERVER    — FTP server hostname   (e.g. dru.jzw.mybluehost.me)
+#   FTP_USERNAME  — FTP login username     (e.g. moonum@dru.jzw.mybluehost.me)
+#
+# Optional: If your build output folder changes, update BUILD_DIR below.
+# =============================================================================
+
+name: Build & Deploy to Bluehost
+
+# ── Trigger ──────────────────────────────────────────────────────────────────
+# Deploy automatically on every push to the main branch.
+on:
+  push:
+    branches:
+      - main
+
+# ── Configuration ────────────────────────────────────────────────────────────
+# Centralised variables — change these if your project setup differs.
+env:
+  NODE_VERSION: "20"            # Node.js version used for the build
+  BUILD_DIR: "dist"             # Vite build output directory
+  REMOTE_DIR: "/moonum/"         # Relative to FTP root (which is /home4/drujzwmy/public_html)
+
+# ── Permissions ──────────────────────────────────────────────────────────────
+permissions:
+  contents: read                # Only read access is needed
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout the repository ─────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Set up Node.js ─────────────────────────────────────────────────
+      # Uses the version defined in the env block above.
+      - name: Set up Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"          # Cache npm dependencies for faster builds
+
+      # ── 3. Install dependencies ───────────────────────────────────────────
+      # `npm ci` ensures a clean, reproducible install from package-lock.json.
+      - name: Install dependencies
+        run: npm ci
+
+      # ── 4. Build the project ──────────────────────────────────────────────
+      # Produces the production build in the BUILD_DIR directory.
+      - name: Build production bundle
+        run: npm run build
+
+      # ── 5. Verify build output exists ─────────────────────────────────────
+      # Fail early with a clear message if the build didn't produce output.
+      - name: Verify build output
+        run: |
+          if [ ! -d "${{ env.BUILD_DIR }}" ]; then
+            echo "::error::Build output directory '${{ env.BUILD_DIR }}' not found!"
+            exit 1
+          fi
+          echo "✅ Build output directory found. Contents:"
+          ls -la ${{ env.BUILD_DIR }}
+
+      # ── 6. Safety guard — prevent deployment to root ───────────────────────
+      # The FTP root maps to /home4/drujzwmy/public_html which contains
+      # multiple websites. Deploying to "/" or "/public_html/" would
+      # overwrite or corrupt other sites. This step hard-fails if
+      # REMOTE_DIR is set to anything that resolves to the hosting root.
+      - name: Safety guard — block root deployment
+        run: |
+          DIR="${{ env.REMOTE_DIR }}"
+          # Normalise: strip trailing slashes for comparison
+          NORMALISED=$(echo "$DIR" | sed 's:/*$::')
+          if [ -z "$NORMALISED" ] || [ "$NORMALISED" = "/" ] || [ "$NORMALISED" = "/public_html" ]; then
+            echo "::error::🚨 REMOTE_DIR is set to '$DIR' which targets the hosting root!"
+            echo "::error::This would overwrite ALL websites under public_html."
+            echo "::error::Deployment MUST target a subdirectory (e.g. /moonum/)."
+            exit 1
+          fi
+          echo "✅ Deployment target '$DIR' is safe (not root)."
+
+      # ── 7. Deploy to Bluehost via FTPS ────────────────────────────────────
+      # Uses SamKirkland/FTP-Deploy-Action to upload the build output.
+      #
+      # Key behaviour:
+      #   • protocol: ftps              → Encrypted FTP connection
+      #   • local-dir:                  → Only uploads the build output folder
+      #   • server-dir: /moonum/        → Deploys into the moonum subdirectory
+      #   • dangerous-clean-slate: false → Safe incremental sync; only changed
+      #                                   files are uploaded/deleted. No full wipe.
+      #
+      # The action tracks sync state via .ftp-deploy-sync-state.json on the
+      # remote server to know which files changed since the last deploy.
+      - name: Deploy to Bluehost via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./${{ env.BUILD_DIR }}/
+          server-dir: ${{ env.REMOTE_DIR }}
+          dangerous-clean-slate: false
+          log-level: minimal
